@@ -1,10 +1,13 @@
 # Shell Alias Collections
 
-A curated collection of shell aliases for zsh and bash, aggregated from multiple sources with proper attribution.
+A curated collection of shell aliases for zsh and bash, aggregated from
+multiple sources with proper attribution.
 
 ## Overview
 
-This repository provides a centralized, machine-readable collection of shell aliases that can be consumed by shell configuration tools, editors, and extensions. The collections are:
+This repository provides a centralized, machine-readable collection of shell
+aliases that can be consumed by shell configuration tools, editors, and
+extensions. The collections are:
 
 - **Curated**: Hand-picked aliases with descriptions and attribution
 - **Community-contributed**: PRs welcome!
@@ -16,11 +19,12 @@ This repository provides a centralized, machine-readable collection of shell ali
 
 Fetch the manifest to get all available collections:
 
-```
+```text
 https://raw.githubusercontent.com/TurboCoder13/shell-alias-collections/main/manifest.json
 ```
 
-The manifest contains metadata for all collections. Fetch individual collections based on their `source.type`:
+The manifest contains metadata for all collections. Fetch individual
+collections based on their `source.type`:
 
 - `curated`: Fetch from `source.path` relative to this repo
 - `omz-plugin`: Fetch from Oh My Zsh plugin directory
@@ -48,9 +52,7 @@ Each curated collection follows this schema:
   "description": "What these aliases do",
   "version": "1.0.0",
   "attribution": {
-    "inspirations": [
-      { "name": "Source Name", "url": "https://..." }
-    ],
+    "inspirations": [{ "name": "Source Name", "url": "https://..." }],
     "contributors": ["username"]
   },
   "aliases": [
@@ -65,11 +67,11 @@ Each curated collection follows this schema:
 
 ## Source Types
 
-| Type | Description | Example |
-|------|-------------|---------|
-| `curated` | Hand-curated in this repo | git-essentials, navigation |
-| `omz-plugin` | Oh My Zsh plugins | git, docker, kubectl |
-| `external` | External repositories | awesome-bash-alias |
+| Type         | Description               | Example                    |
+| ------------ | ------------------------- | -------------------------- |
+| `curated`    | Hand-curated in this repo | git-essentials, navigation |
+| `omz-plugin` | Oh My Zsh plugins         | git, docker, kubectl       |
+| `external`   | External repositories     | awesome-bash-alias         |
 
 ## Contributing
 
@@ -81,16 +83,22 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
 
 ## Attribution
 
-This project aggregates and curates aliases from various sources. See [SOURCES.md](SOURCES.md) for detailed attribution.
+This project aggregates and curates aliases from various sources.
+See [SOURCES.md](SOURCES.md) for detailed attribution.
 
 ### Primary Inspirations
 
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) - MIT License
-- [nixCraft](https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html) - Blog inspiration
-- [davidjguru](https://davidjguru.github.io/blog/linux-70-commands-aliases-for-everyday-life) - Blog inspiration
+- [nixCraft][nixcraft] - Blog inspiration
+- [davidjguru][davidjguru] - Blog inspiration
+
+[nixcraft]: https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+[davidjguru]: https://davidjguru.github.io/blog/linux-70-commands-aliases-for-everyday-life
 
 ## License
 
 MIT License - See [LICENSE](LICENSE)
 
-Curated content is original work inspired by (not copied from) the sources listed. Oh My Zsh plugins are fetched dynamically and subject to their own MIT license.
+Curated content is original work inspired by (not copied from) the sources
+listed. Oh My Zsh plugins are fetched dynamically and subject to their own
+MIT license.

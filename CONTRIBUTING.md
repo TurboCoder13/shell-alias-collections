@@ -1,6 +1,7 @@
 # Contributing to Shell Alias Collections
 
-Thank you for your interest in contributing! This document explains how to add new collections, improve existing ones, or suggest external sources.
+Thank you for your interest in contributing! This document explains how to
+add new collections, improve existing ones, or suggest external sources.
 
 ## Types of Contributions
 
@@ -94,7 +95,7 @@ For external GitHub repositories or other sources:
 }
 ```
 
-4. Add attribution to `SOURCES.md`
+Also add attribution to `SOURCES.md` for new external sources.
 
 ### 4. Improving Existing Collections
 
