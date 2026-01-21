@@ -13,13 +13,33 @@
     "contributors": []
   },
   "aliases": [
-    { "name": "rm", "value": "rm -i", "description": "Remove with confirmation" },
+    {
+      "name": "rm",
+      "value": "rm -i",
+      "description": "Remove with confirmation"
+    },
     { "name": "cp", "value": "cp -i", "description": "Copy with confirmation" },
     { "name": "mv", "value": "mv -i", "description": "Move with confirmation" },
     { "name": "ln", "value": "ln -i", "description": "Link with confirmation" },
-    { "name": "rmf", "value": "rm -rf", "description": "Force remove (use carefully)" },
-    { "name": "chown", "value": "chown --preserve-root", "description": "Protect root directory" },
-    { "name": "chmod", "value": "chmod --preserve-root", "description": "Protect root directory" },
-    { "name": "chgrp", "value": "chgrp --preserve-root", "description": "Protect root directory" }
+    {
+      "name": "rmf",
+      "value": "rm -rf",
+      "description": "Force remove (use carefully)"
+    },
+    {
+      "name": "chown",
+      "value": "chown --preserve-root",
+      "description": "Protect root directory"
+    },
+    {
+      "name": "chmod",
+      "value": "chmod --preserve-root",
+      "description": "Protect root directory"
+    },
+    {
+      "name": "chgrp",
+      "value": "chgrp --preserve-root",
+      "description": "Protect root directory"
+    }
   ]
 }

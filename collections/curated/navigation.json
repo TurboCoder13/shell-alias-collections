@@ -18,19 +18,59 @@
   },
   "aliases": [
     { "name": "..", "value": "cd ..", "description": "Go up one directory" },
-    { "name": "...", "value": "cd ../..", "description": "Go up two directories" },
-    { "name": "....", "value": "cd ../../..", "description": "Go up three directories" },
+    {
+      "name": "...",
+      "value": "cd ../..",
+      "description": "Go up two directories"
+    },
+    {
+      "name": "....",
+      "value": "cd ../../..",
+      "description": "Go up three directories"
+    },
     { "name": "~", "value": "cd ~", "description": "Go to home directory" },
     { "name": "-", "value": "cd -", "description": "Go to previous directory" },
-    { "name": "ll", "value": "ls -lah", "description": "Long list with hidden files" },
-    { "name": "la", "value": "ls -A", "description": "List all except . and .." },
-    { "name": "l", "value": "ls -CF", "description": "Compact list with indicators" },
-    { "name": "lt", "value": "ls -ltr", "description": "List by modification time" },
+    {
+      "name": "ll",
+      "value": "ls -lah",
+      "description": "Long list with hidden files"
+    },
+    {
+      "name": "la",
+      "value": "ls -A",
+      "description": "List all except . and .."
+    },
+    {
+      "name": "l",
+      "value": "ls -CF",
+      "description": "Compact list with indicators"
+    },
+    {
+      "name": "lt",
+      "value": "ls -ltr",
+      "description": "List by modification time"
+    },
     { "name": "lS", "value": "ls -lSr", "description": "List by size" },
-    { "name": "tree1", "value": "tree -L 1", "description": "Tree view depth 1" },
-    { "name": "tree2", "value": "tree -L 2", "description": "Tree view depth 2" },
-    { "name": "tree3", "value": "tree -L 3", "description": "Tree view depth 3" },
-    { "name": "md", "value": "mkdir -p", "description": "Create directory with parents" },
+    {
+      "name": "tree1",
+      "value": "tree -L 1",
+      "description": "Tree view depth 1"
+    },
+    {
+      "name": "tree2",
+      "value": "tree -L 2",
+      "description": "Tree view depth 2"
+    },
+    {
+      "name": "tree3",
+      "value": "tree -L 3",
+      "description": "Tree view depth 3"
+    },
+    {
+      "name": "md",
+      "value": "mkdir -p",
+      "description": "Create directory with parents"
+    },
     { "name": "rd", "value": "rmdir", "description": "Remove empty directory" }
   ]
 }
