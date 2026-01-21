@@ -1,0 +1,37 @@
+{
+  "id": "file-operations",
+  "name": "File Operations",
+  "description": "File manipulation and management shortcuts",
+  "version": "1.0.0",
+  "attribution": {
+    "inspirations": [
+      {
+        "name": "davidjguru",
+        "url": "https://davidjguru.github.io/blog/linux-70-commands-aliases-for-everyday-life"
+      },
+      {
+        "name": "nixCraft",
+        "url": "https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html"
+      }
+    ],
+    "contributors": []
+  },
+  "aliases": [
+    { "name": "grep", "value": "grep --color=auto", "description": "Grep with color" },
+    { "name": "egrep", "value": "egrep --color=auto", "description": "Extended grep with color" },
+    { "name": "fgrep", "value": "fgrep --color=auto", "description": "Fixed grep with color" },
+    { "name": "h", "value": "history", "description": "Show command history" },
+    { "name": "hg", "value": "history | grep", "description": "Search command history" },
+    { "name": "ff", "value": "find . -type f -name", "description": "Find file by name" },
+    { "name": "fd", "value": "find . -type d -name", "description": "Find directory by name" },
+    { "name": "duh", "value": "du -h --max-depth=1", "description": "Directory sizes" },
+    { "name": "duf", "value": "du -sh *", "description": "Size of items in current dir" },
+    { "name": "dfh", "value": "df -h", "description": "Disk free space" },
+    { "name": "wcl", "value": "wc -l", "description": "Count lines" },
+    { "name": "sortu", "value": "sort -u", "description": "Sort unique" },
+    { "name": "cx", "value": "chmod +x", "description": "Make executable" },
+    { "name": "000", "value": "chmod 000", "description": "Remove all permissions" },
+    { "name": "644", "value": "chmod 644", "description": "Standard file permissions" },
+    { "name": "755", "value": "chmod 755", "description": "Standard directory permissions" }
+  ]
+}
