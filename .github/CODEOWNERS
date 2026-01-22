@@ -1,0 +1,13 @@
+# CODEOWNERS - Default reviewers for pull requests
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owners for everything
+* @TurboCoder13
+
+# Collections
+/collections/ @TurboCoder13
+/manifest.json @TurboCoder13
+
+# CI/CD
+/.github/ @TurboCoder13
+/scripts/ @TurboCoder13

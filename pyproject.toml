@@ -1,0 +1,44 @@
+[project]
+name = "shell-alias-collections"
+version = "1.0.0"
+description = "Curated shell alias collections for zsh and bash"
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+dev = ["lintro>=0.35.0"]
+
+[tool.lintro]
+# Lintro configuration for shell-alias-collections
+# See: https://github.com/TurboCoder13/py-lintro
+
+[tool.lintro.tools.shellcheck]
+enabled = true
+paths = ["scripts/"]
+severity = "warning"
+
+[tool.lintro.tools.shfmt]
+enabled = true
+paths = ["scripts/"]
+indent = 0
+binary_next_line = true
+case_indent = true
+
+[tool.lintro.tools.yamllint]
+enabled = true
+paths = [".github/"]
+
+[tool.lintro.tools.markdownlint]
+enabled = true
+paths = ["*.md", ".github/", "scripts/"]
+
+[tool.lintro.tools.prettier]
+enabled = true
+paths = ["*.json", "collections/", "*.md"]
+
+[tool.yamllint]
+extends = "default"
+
+[tool.yamllint.rules]
+line-length = { max = 120 }
+truthy = { check-keys = false }
+document-start = "disable"
