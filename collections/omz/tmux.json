@@ -1,0 +1,27 @@
+{
+  "id": "tmux",
+  "name": "Tmux",
+  "description": "Tmux terminal multiplexer aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "tksv",
+      "value": "tmux kill-server"
+    },
+    {
+      "name": "tl",
+      "value": "tmux list-sessions"
+    },
+    {
+      "name": "tmuxconf",
+      "value": "$EDITOR $ZSH_TMUX_CONFIG"
+    }
+  ]
+}

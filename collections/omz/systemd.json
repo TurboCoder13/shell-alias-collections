@@ -1,0 +1,47 @@
+{
+  "id": "systemd",
+  "name": "Systemd",
+  "description": "Linux systemd service management aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/systemd",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "sc-enable-now",
+      "value": "sc-enable --now"
+    },
+    {
+      "name": "sc-disable-now",
+      "value": "sc-disable --now"
+    },
+    {
+      "name": "sc-mask-now",
+      "value": "sc-mask --now"
+    },
+    {
+      "name": "scu-enable-now",
+      "value": "scu-enable --now"
+    },
+    {
+      "name": "scu-disable-now",
+      "value": "scu-disable --now"
+    },
+    {
+      "name": "scu-mask-now",
+      "value": "scu-mask --now"
+    },
+    {
+      "name": "scu-failed",
+      "value": "systemctl --user --failed"
+    },
+    {
+      "name": "sc-failed",
+      "value": "systemctl --failed"
+    }
+  ]
+}

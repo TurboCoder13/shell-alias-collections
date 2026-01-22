@@ -1,0 +1,53 @@
+{
+  "id": "pip",
+  "name": "Pip",
+  "description": "Python pip package manager aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pip",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "pip",
+      "value": "noglob pip3"
+    },
+    {
+      "name": "pip",
+      "value": "noglob pip"
+    },
+    {
+      "name": "pipi",
+      "value": "pip install"
+    },
+    {
+      "name": "pipu",
+      "value": "pip install --upgrade"
+    },
+    {
+      "name": "pipun",
+      "value": "pip uninstall"
+    },
+    {
+      "name": "pipgi",
+      "value": "pip freeze | grep"
+    },
+    {
+      "name": "piplo",
+      "value": "pip list -o"
+    },
+    {
+      "name": "pipreq",
+      "value": "pip freeze > requirements.txt",
+      "description": "Create requirements file"
+    },
+    {
+      "name": "pipir",
+      "value": "pip install -r requirements.txt",
+      "description": "Install packages from requirements file"
+    }
+  ]
+}

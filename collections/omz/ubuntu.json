@@ -1,0 +1,125 @@
+{
+  "id": "ubuntu",
+  "name": "Ubuntu",
+  "description": "Ubuntu Linux aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ubuntu",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "acs",
+      "value": "apt-cache search"
+    },
+    {
+      "name": "afs",
+      "value": "apt-file search --regexp"
+    },
+    {
+      "name": "ags",
+      "value": "apt source"
+    },
+    {
+      "name": "ags",
+      "value": "apt-get source"
+    },
+    {
+      "name": "acp",
+      "value": "apt-cache policy"
+    },
+    {
+      "name": "agli",
+      "value": "apt list --installed",
+      "description": "List all installed packages"
+    },
+    {
+      "name": "aglu",
+      "value": "apt list --upgradable",
+      "description": "List available updates only"
+    },
+    {
+      "name": "acsp",
+      "value": "apt-cache showpkg"
+    },
+    {
+      "name": "afu",
+      "value": "sudo apt-file update",
+      "description": "superuser operations ######################################################"
+    },
+    {
+      "name": "ppap",
+      "value": "sudo ppa-purge"
+    },
+    {
+      "name": "age",
+      "value": "sudo $APT"
+    },
+    {
+      "name": "aga",
+      "value": "sudo $APT autoclean"
+    },
+    {
+      "name": "agb",
+      "value": "sudo $APT build-dep"
+    },
+    {
+      "name": "agc",
+      "value": "sudo $APT clean"
+    },
+    {
+      "name": "agd",
+      "value": "sudo $APT dselect-upgrade"
+    },
+    {
+      "name": "agi",
+      "value": "sudo $APT install"
+    },
+    {
+      "name": "agp",
+      "value": "sudo $APT purge"
+    },
+    {
+      "name": "agr",
+      "value": "sudo $APT remove"
+    },
+    {
+      "name": "agu",
+      "value": "sudo $APT update"
+    },
+    {
+      "name": "agud",
+      "value": "sudo $APT update && sudo $APT dist-upgrade"
+    },
+    {
+      "name": "agug",
+      "value": "sudo $APT upgrade"
+    },
+    {
+      "name": "aguu",
+      "value": "sudo $APT update && sudo $APT upgrade"
+    },
+    {
+      "name": "agar",
+      "value": "sudo $APT autoremove"
+    },
+    {
+      "name": "kclean",
+      "value": "sudo aptitude remove -P ?and(~i~nlinux-(ima|hea) ?not(~n`uname -r`))",
+      "description": "Remove ALL kernel images and headers EXCEPT the one in use"
+    },
+    {
+      "name": "allpkgs",
+      "value": "dpkg --get-selections | grep -v deinstall",
+      "description": "print all installed packages"
+    },
+    {
+      "name": "mydeb",
+      "value": "time dpkg-buildpackage -rfakeroot -us -uc",
+      "description": "Create a basic .deb package"
+    }
+  ]
+}

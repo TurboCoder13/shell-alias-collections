@@ -1,0 +1,91 @@
+{
+  "id": "docker-compose",
+  "name": "Docker Compose",
+  "description": "Docker Compose orchestration aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker-compose",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "dco",
+      "value": "$dccmd"
+    },
+    {
+      "name": "dcb",
+      "value": "$dccmd build"
+    },
+    {
+      "name": "dce",
+      "value": "$dccmd exec"
+    },
+    {
+      "name": "dcps",
+      "value": "$dccmd ps"
+    },
+    {
+      "name": "dcrestart",
+      "value": "$dccmd restart"
+    },
+    {
+      "name": "dcrm",
+      "value": "$dccmd rm"
+    },
+    {
+      "name": "dcr",
+      "value": "$dccmd run"
+    },
+    {
+      "name": "dcstop",
+      "value": "$dccmd stop"
+    },
+    {
+      "name": "dcup",
+      "value": "$dccmd up"
+    },
+    {
+      "name": "dcupb",
+      "value": "$dccmd up --build"
+    },
+    {
+      "name": "dcupd",
+      "value": "$dccmd up -d"
+    },
+    {
+      "name": "dcupdb",
+      "value": "$dccmd up -d --build"
+    },
+    {
+      "name": "dcdn",
+      "value": "$dccmd down"
+    },
+    {
+      "name": "dcl",
+      "value": "$dccmd logs"
+    },
+    {
+      "name": "dclf",
+      "value": "$dccmd logs -f"
+    },
+    {
+      "name": "dclF",
+      "value": "$dccmd logs -f --tail 0"
+    },
+    {
+      "name": "dcpull",
+      "value": "$dccmd pull"
+    },
+    {
+      "name": "dcstart",
+      "value": "$dccmd start"
+    },
+    {
+      "name": "dck",
+      "value": "$dccmd kill"
+    }
+  ]
+}

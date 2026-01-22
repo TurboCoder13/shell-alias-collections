@@ -1,0 +1,30 @@
+{
+  "id": "python",
+  "name": "Python",
+  "description": "Python development aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/python",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "pyfind",
+      "value": "find . -name \"*.py\"",
+      "description": "Find python file"
+    },
+    {
+      "name": "pygrep",
+      "value": "grep -nr --include=\"*.py\"",
+      "description": "Grep among .py files"
+    },
+    {
+      "name": "pyserver",
+      "value": "python3 -m http.server",
+      "description": "Share local directory as a HTTP server"
+    }
+  ]
+}

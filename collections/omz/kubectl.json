@@ -1,0 +1,501 @@
+{
+  "id": "kubectl",
+  "name": "Kubernetes",
+  "description": "Kubernetes kubectl aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "kca",
+      "value": "_kca(){ kubectl \"$@\" --all-namespaces;  unset -f _kca; }; _kca",
+      "description": "Execute a kubectl command against all namespaces"
+    },
+    {
+      "name": "kaf",
+      "value": "kubectl apply -f",
+      "description": "Apply a YML file"
+    },
+    {
+      "name": "kapk",
+      "value": "kubectl apply -k",
+      "description": "Apply a kustomization directory"
+    },
+    {
+      "name": "keti",
+      "value": "kubectl exec -t -i",
+      "description": "Drop into an interactive terminal on a container"
+    },
+    {
+      "name": "kcuc",
+      "value": "kubectl config use-context",
+      "description": "Manage configuration quickly to switch contexts between local, dev ad staging."
+    },
+    {
+      "name": "kcsc",
+      "value": "kubectl config set-context"
+    },
+    {
+      "name": "kcdc",
+      "value": "kubectl config delete-context"
+    },
+    {
+      "name": "kccc",
+      "value": "kubectl config current-context"
+    },
+    {
+      "name": "kcgc",
+      "value": "kubectl config get-contexts",
+      "description": "List all contexts"
+    },
+    {
+      "name": "kdel",
+      "value": "kubectl delete",
+      "description": "General aliases"
+    },
+    {
+      "name": "kdelf",
+      "value": "kubectl delete -f"
+    },
+    {
+      "name": "kdelk",
+      "value": "kubectl delete -k"
+    },
+    {
+      "name": "kge",
+      "value": "kubectl get events --sort-by=\".lastTimestamp\""
+    },
+    {
+      "name": "kgew",
+      "value": "kubectl get events --sort-by=\".lastTimestamp\" --watch"
+    },
+    {
+      "name": "kgp",
+      "value": "kubectl get pods",
+      "description": "Pod management."
+    },
+    {
+      "name": "kgpl",
+      "value": "kgp -l"
+    },
+    {
+      "name": "kgpn",
+      "value": "kgp -n"
+    },
+    {
+      "name": "kgpsl",
+      "value": "kubectl get pods --show-labels"
+    },
+    {
+      "name": "kgpa",
+      "value": "kubectl get pods --all-namespaces"
+    },
+    {
+      "name": "kgpw",
+      "value": "kgp --watch"
+    },
+    {
+      "name": "kgpwide",
+      "value": "kgp -o wide"
+    },
+    {
+      "name": "kep",
+      "value": "kubectl edit pods"
+    },
+    {
+      "name": "kdp",
+      "value": "kubectl describe pods"
+    },
+    {
+      "name": "kdelp",
+      "value": "kubectl delete pods"
+    },
+    {
+      "name": "kgpall",
+      "value": "kubectl get pods --all-namespaces -o wide"
+    },
+    {
+      "name": "kgs",
+      "value": "kubectl get svc",
+      "description": "Service management."
+    },
+    {
+      "name": "kgsa",
+      "value": "kubectl get svc --all-namespaces"
+    },
+    {
+      "name": "kgsw",
+      "value": "kgs --watch"
+    },
+    {
+      "name": "kgswide",
+      "value": "kgs -o wide"
+    },
+    {
+      "name": "kes",
+      "value": "kubectl edit svc"
+    },
+    {
+      "name": "kds",
+      "value": "kubectl describe svc"
+    },
+    {
+      "name": "kdels",
+      "value": "kubectl delete svc"
+    },
+    {
+      "name": "kgi",
+      "value": "kubectl get ingress",
+      "description": "Ingress management"
+    },
+    {
+      "name": "kgia",
+      "value": "kubectl get ingress --all-namespaces"
+    },
+    {
+      "name": "kei",
+      "value": "kubectl edit ingress"
+    },
+    {
+      "name": "kdi",
+      "value": "kubectl describe ingress"
+    },
+    {
+      "name": "kdeli",
+      "value": "kubectl delete ingress"
+    },
+    {
+      "name": "kgns",
+      "value": "kubectl get namespaces",
+      "description": "Namespace management"
+    },
+    {
+      "name": "kens",
+      "value": "kubectl edit namespace"
+    },
+    {
+      "name": "kdns",
+      "value": "kubectl describe namespace"
+    },
+    {
+      "name": "kdelns",
+      "value": "kubectl delete namespace"
+    },
+    {
+      "name": "kcn",
+      "value": "kubectl config set-context --current --namespace"
+    },
+    {
+      "name": "kgcm",
+      "value": "kubectl get configmaps",
+      "description": "ConfigMap management"
+    },
+    {
+      "name": "kgcma",
+      "value": "kubectl get configmaps --all-namespaces"
+    },
+    {
+      "name": "kecm",
+      "value": "kubectl edit configmap"
+    },
+    {
+      "name": "kdcm",
+      "value": "kubectl describe configmap"
+    },
+    {
+      "name": "kdelcm",
+      "value": "kubectl delete configmap"
+    },
+    {
+      "name": "kgsec",
+      "value": "kubectl get secret",
+      "description": "Secret management"
+    },
+    {
+      "name": "kgseca",
+      "value": "kubectl get secret --all-namespaces"
+    },
+    {
+      "name": "kdsec",
+      "value": "kubectl describe secret"
+    },
+    {
+      "name": "kdelsec",
+      "value": "kubectl delete secret"
+    },
+    {
+      "name": "kgd",
+      "value": "kubectl get deployment",
+      "description": "Deployment management."
+    },
+    {
+      "name": "kgda",
+      "value": "kubectl get deployment --all-namespaces"
+    },
+    {
+      "name": "kgdw",
+      "value": "kgd --watch"
+    },
+    {
+      "name": "kgdwide",
+      "value": "kgd -o wide"
+    },
+    {
+      "name": "ked",
+      "value": "kubectl edit deployment"
+    },
+    {
+      "name": "kdd",
+      "value": "kubectl describe deployment"
+    },
+    {
+      "name": "kdeld",
+      "value": "kubectl delete deployment"
+    },
+    {
+      "name": "ksd",
+      "value": "kubectl scale deployment"
+    },
+    {
+      "name": "krsd",
+      "value": "kubectl rollout status deployment"
+    },
+    {
+      "name": "krrd",
+      "value": "kubectl rollout restart deployment"
+    },
+    {
+      "name": "kgrs",
+      "value": "kubectl get replicaset",
+      "description": "Rollout management."
+    },
+    {
+      "name": "kdrs",
+      "value": "kubectl describe replicaset"
+    },
+    {
+      "name": "kers",
+      "value": "kubectl edit replicaset"
+    },
+    {
+      "name": "krh",
+      "value": "kubectl rollout history"
+    },
+    {
+      "name": "kru",
+      "value": "kubectl rollout undo"
+    },
+    {
+      "name": "kgss",
+      "value": "kubectl get statefulset",
+      "description": "Statefulset management."
+    },
+    {
+      "name": "kgssa",
+      "value": "kubectl get statefulset --all-namespaces"
+    },
+    {
+      "name": "kgssw",
+      "value": "kgss --watch"
+    },
+    {
+      "name": "kgsswide",
+      "value": "kgss -o wide"
+    },
+    {
+      "name": "kess",
+      "value": "kubectl edit statefulset"
+    },
+    {
+      "name": "kdss",
+      "value": "kubectl describe statefulset"
+    },
+    {
+      "name": "kdelss",
+      "value": "kubectl delete statefulset"
+    },
+    {
+      "name": "ksss",
+      "value": "kubectl scale statefulset"
+    },
+    {
+      "name": "krsss",
+      "value": "kubectl rollout status statefulset"
+    },
+    {
+      "name": "krrss",
+      "value": "kubectl rollout restart statefulset"
+    },
+    {
+      "name": "kpf",
+      "value": "kubectl port-forward",
+      "description": "Port forwarding"
+    },
+    {
+      "name": "kga",
+      "value": "kubectl get all",
+      "description": "Tools for accessing all information"
+    },
+    {
+      "name": "kgaa",
+      "value": "kubectl get all --all-namespaces"
+    },
+    {
+      "name": "kl",
+      "value": "kubectl logs",
+      "description": "Logs"
+    },
+    {
+      "name": "kl1h",
+      "value": "kubectl logs --since 1h"
+    },
+    {
+      "name": "kl1m",
+      "value": "kubectl logs --since 1m"
+    },
+    {
+      "name": "kl1s",
+      "value": "kubectl logs --since 1s"
+    },
+    {
+      "name": "klf",
+      "value": "kubectl logs -f"
+    },
+    {
+      "name": "klf1h",
+      "value": "kubectl logs --since 1h -f"
+    },
+    {
+      "name": "klf1m",
+      "value": "kubectl logs --since 1m -f"
+    },
+    {
+      "name": "klf1s",
+      "value": "kubectl logs --since 1s -f"
+    },
+    {
+      "name": "kcp",
+      "value": "kubectl cp",
+      "description": "File copy"
+    },
+    {
+      "name": "kgno",
+      "value": "kubectl get nodes",
+      "description": "Node Management"
+    },
+    {
+      "name": "kgnosl",
+      "value": "kubectl get nodes --show-labels"
+    },
+    {
+      "name": "keno",
+      "value": "kubectl edit node"
+    },
+    {
+      "name": "kdno",
+      "value": "kubectl describe node"
+    },
+    {
+      "name": "kdelno",
+      "value": "kubectl delete node"
+    },
+    {
+      "name": "kgpvc",
+      "value": "kubectl get pvc",
+      "description": "PVC management."
+    },
+    {
+      "name": "kgpvca",
+      "value": "kubectl get pvc --all-namespaces"
+    },
+    {
+      "name": "kgpvcw",
+      "value": "kgpvc --watch"
+    },
+    {
+      "name": "kepvc",
+      "value": "kubectl edit pvc"
+    },
+    {
+      "name": "kdpvc",
+      "value": "kubectl describe pvc"
+    },
+    {
+      "name": "kdelpvc",
+      "value": "kubectl delete pvc"
+    },
+    {
+      "name": "kdsa",
+      "value": "kubectl describe sa",
+      "description": "Service account management."
+    },
+    {
+      "name": "kdelsa",
+      "value": "kubectl delete sa"
+    },
+    {
+      "name": "kgds",
+      "value": "kubectl get daemonset",
+      "description": "DaemonSet management."
+    },
+    {
+      "name": "kgdsa",
+      "value": "kubectl get daemonset --all-namespaces"
+    },
+    {
+      "name": "kgdsw",
+      "value": "kgds --watch"
+    },
+    {
+      "name": "keds",
+      "value": "kubectl edit daemonset"
+    },
+    {
+      "name": "kdds",
+      "value": "kubectl describe daemonset"
+    },
+    {
+      "name": "kdelds",
+      "value": "kubectl delete daemonset"
+    },
+    {
+      "name": "kgcj",
+      "value": "kubectl get cronjob",
+      "description": "CronJob management."
+    },
+    {
+      "name": "kecj",
+      "value": "kubectl edit cronjob"
+    },
+    {
+      "name": "kdcj",
+      "value": "kubectl describe cronjob"
+    },
+    {
+      "name": "kdelcj",
+      "value": "kubectl delete cronjob"
+    },
+    {
+      "name": "kgj",
+      "value": "kubectl get job",
+      "description": "Job management."
+    },
+    {
+      "name": "kej",
+      "value": "kubectl edit job"
+    },
+    {
+      "name": "kdj",
+      "value": "kubectl describe job"
+    },
+    {
+      "name": "kdelj",
+      "value": "kubectl delete job"
+    }
+  ]
+}

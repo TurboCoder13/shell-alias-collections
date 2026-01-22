@@ -1,0 +1,99 @@
+{
+  "id": "terraform",
+  "name": "Terraform",
+  "description": "Terraform infrastructure as code aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/terraform",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "tf",
+      "value": "terraform"
+    },
+    {
+      "name": "tfa",
+      "value": "terraform apply"
+    },
+    {
+      "name": "tfap",
+      "value": "terraform apply -parallelism=1"
+    },
+    {
+      "name": "tfc",
+      "value": "terraform console"
+    },
+    {
+      "name": "tfd",
+      "value": "terraform destroy"
+    },
+    {
+      "name": "tfdp",
+      "value": "terraform destroy -parallelism=1"
+    },
+    {
+      "name": "tff",
+      "value": "terraform fmt"
+    },
+    {
+      "name": "tffr",
+      "value": "terraform fmt -recursive"
+    },
+    {
+      "name": "tfi",
+      "value": "terraform init"
+    },
+    {
+      "name": "tfir",
+      "value": "terraform init -reconfigure"
+    },
+    {
+      "name": "tfiu",
+      "value": "terraform init -upgrade"
+    },
+    {
+      "name": "tfiur",
+      "value": "terraform init -upgrade -reconfigure"
+    },
+    {
+      "name": "tfo",
+      "value": "terraform output"
+    },
+    {
+      "name": "tfp",
+      "value": "terraform plan"
+    },
+    {
+      "name": "tfv",
+      "value": "terraform validate"
+    },
+    {
+      "name": "tfs",
+      "value": "terraform state"
+    },
+    {
+      "name": "tft",
+      "value": "terraform test"
+    },
+    {
+      "name": "tfsh",
+      "value": "terraform show"
+    },
+    {
+      "name": "tfw",
+      "value": "terraform workspace"
+    },
+    {
+      "name": "tfwl",
+      "value": "terraform workspace list"
+    },
+    {
+      "name": "tfws",
+      "value": "terraform workspace select"
+    }
+  ]
+}

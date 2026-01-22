@@ -1,0 +1,56 @@
+{
+  "id": "bundler",
+  "name": "Bundler",
+  "description": "Ruby Bundler aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/bundler",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "ba",
+      "value": "bundle add",
+      "description": "# Aliases"
+    },
+    {
+      "name": "bck",
+      "value": "bundle check"
+    },
+    {
+      "name": "bcn",
+      "value": "bundle clean"
+    },
+    {
+      "name": "be",
+      "value": "bundle exec"
+    },
+    {
+      "name": "bi",
+      "value": "bundle_install"
+    },
+    {
+      "name": "bl",
+      "value": "bundle list"
+    },
+    {
+      "name": "bo",
+      "value": "bundle open"
+    },
+    {
+      "name": "bout",
+      "value": "bundle outdated"
+    },
+    {
+      "name": "bp",
+      "value": "bundle package"
+    },
+    {
+      "name": "bu",
+      "value": "bundle update"
+    }
+  ]
+}

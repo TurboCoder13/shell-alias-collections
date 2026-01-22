@@ -1,0 +1,159 @@
+{
+  "id": "brew",
+  "name": "Homebrew",
+  "description": "Homebrew package manager aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/brew",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "ba",
+      "value": "brew autoremove"
+    },
+    {
+      "name": "bcfg",
+      "value": "brew config"
+    },
+    {
+      "name": "bci",
+      "value": "brew info --cask"
+    },
+    {
+      "name": "bcin",
+      "value": "brew install --cask"
+    },
+    {
+      "name": "bcl",
+      "value": "brew list --cask"
+    },
+    {
+      "name": "bcn",
+      "value": "brew cleanup"
+    },
+    {
+      "name": "bco",
+      "value": "brew outdated --cask"
+    },
+    {
+      "name": "bcrin",
+      "value": "brew reinstall --cask"
+    },
+    {
+      "name": "bcubc",
+      "value": "brew upgrade --cask && brew cleanup"
+    },
+    {
+      "name": "bcubo",
+      "value": "brew update && brew outdated --cask"
+    },
+    {
+      "name": "bcup",
+      "value": "brew upgrade --cask"
+    },
+    {
+      "name": "bdr",
+      "value": "brew doctor"
+    },
+    {
+      "name": "bfu",
+      "value": "brew upgrade --formula"
+    },
+    {
+      "name": "bi",
+      "value": "brew install"
+    },
+    {
+      "name": "bih",
+      "value": "brew install --HEAD"
+    },
+    {
+      "name": "bl",
+      "value": "brew list"
+    },
+    {
+      "name": "bo",
+      "value": "brew outdated"
+    },
+    {
+      "name": "br",
+      "value": "brew reinstall"
+    },
+    {
+      "name": "brewp",
+      "value": "brew pin"
+    },
+    {
+      "name": "brewsp",
+      "value": "brew list --pinned"
+    },
+    {
+      "name": "brh",
+      "value": "brew reinstall --HEAD"
+    },
+    {
+      "name": "bs",
+      "value": "brew search"
+    },
+    {
+      "name": "bsl",
+      "value": "brew services list"
+    },
+    {
+      "name": "bsoff",
+      "value": "brew services stop"
+    },
+    {
+      "name": "bsoffa",
+      "value": "bsoff --all"
+    },
+    {
+      "name": "bson",
+      "value": "brew services start"
+    },
+    {
+      "name": "bsona",
+      "value": "bson --all"
+    },
+    {
+      "name": "bsr",
+      "value": "brew services run"
+    },
+    {
+      "name": "bsra",
+      "value": "bsr --all"
+    },
+    {
+      "name": "bu",
+      "value": "brew update"
+    },
+    {
+      "name": "bubo",
+      "value": "brew update && brew outdated"
+    },
+    {
+      "name": "bubu",
+      "value": "bubo && bup"
+    },
+    {
+      "name": "bubug",
+      "value": "bubo && bugbc"
+    },
+    {
+      "name": "bugbc",
+      "value": "brew upgrade --greedy && brew cleanup"
+    },
+    {
+      "name": "bup",
+      "value": "brew upgrade"
+    },
+    {
+      "name": "buz",
+      "value": "brew uninstall --zap"
+    }
+  ]
+}

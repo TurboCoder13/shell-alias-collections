@@ -1,0 +1,178 @@
+{
+  "id": "yarn",
+  "name": "Yarn",
+  "description": "Yarn package manager aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "y",
+      "value": "yarn"
+    },
+    {
+      "name": "ya",
+      "value": "yarn add"
+    },
+    {
+      "name": "yad",
+      "value": "yarn add --dev"
+    },
+    {
+      "name": "yap",
+      "value": "yarn add --peer"
+    },
+    {
+      "name": "yb",
+      "value": "yarn build"
+    },
+    {
+      "name": "ycc",
+      "value": "yarn cache clean"
+    },
+    {
+      "name": "yd",
+      "value": "yarn dev"
+    },
+    {
+      "name": "yf",
+      "value": "yarn format"
+    },
+    {
+      "name": "yh",
+      "value": "yarn help"
+    },
+    {
+      "name": "yi",
+      "value": "yarn init"
+    },
+    {
+      "name": "yin",
+      "value": "yarn install"
+    },
+    {
+      "name": "yln",
+      "value": "yarn lint"
+    },
+    {
+      "name": "ylnf",
+      "value": "yarn lint --fix"
+    },
+    {
+      "name": "yp",
+      "value": "yarn pack"
+    },
+    {
+      "name": "yrm",
+      "value": "yarn remove"
+    },
+    {
+      "name": "yrun",
+      "value": "yarn run"
+    },
+    {
+      "name": "ys",
+      "value": "yarn serve"
+    },
+    {
+      "name": "yst",
+      "value": "yarn start"
+    },
+    {
+      "name": "yt",
+      "value": "yarn test"
+    },
+    {
+      "name": "ytc",
+      "value": "yarn test --coverage"
+    },
+    {
+      "name": "yui",
+      "value": "yarn upgrade-interactive"
+    },
+    {
+      "name": "yup",
+      "value": "yarn upgrade"
+    },
+    {
+      "name": "yv",
+      "value": "yarn version"
+    },
+    {
+      "name": "yw",
+      "value": "yarn workspace"
+    },
+    {
+      "name": "yws",
+      "value": "yarn workspaces"
+    },
+    {
+      "name": "yy",
+      "value": "yarn why"
+    },
+    {
+      "name": "yii",
+      "value": "yarn install --immutable"
+    },
+    {
+      "name": "yifl",
+      "value": "yarn install --immutable"
+    },
+    {
+      "name": "ydlx",
+      "value": "yarn dlx",
+      "description": "unique aliases"
+    },
+    {
+      "name": "yn",
+      "value": "yarn node"
+    },
+    {
+      "name": "yuil",
+      "value": "yarn upgrade-interactive --latest",
+      "description": "aliases that differ"
+    },
+    {
+      "name": "yii",
+      "value": "yarn install --frozen-lockfile"
+    },
+    {
+      "name": "yifl",
+      "value": "yarn install --frozen-lockfile"
+    },
+    {
+      "name": "yga",
+      "value": "yarn global add",
+      "description": "unique aliases"
+    },
+    {
+      "name": "ygls",
+      "value": "yarn global list"
+    },
+    {
+      "name": "ygrm",
+      "value": "yarn global remove"
+    },
+    {
+      "name": "ygu",
+      "value": "yarn global upgrade"
+    },
+    {
+      "name": "yls",
+      "value": "yarn list"
+    },
+    {
+      "name": "yout",
+      "value": "yarn outdated"
+    },
+    {
+      "name": "yuca",
+      "value": "yarn global upgrade && yarn cache clean"
+    }
+  ]
+}

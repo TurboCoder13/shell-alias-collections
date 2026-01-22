@@ -1,0 +1,24 @@
+{
+  "id": "macos",
+  "name": "macOS",
+  "description": "macOS-specific aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/macos",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "showfiles",
+      "value": "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder",
+      "description": "Show/hide hidden files in the Finder"
+    },
+    {
+      "name": "hidefiles",
+      "value": "defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+    }
+  ]
+}

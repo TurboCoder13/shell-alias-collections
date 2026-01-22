@@ -1,0 +1,31 @@
+{
+  "id": "rsync",
+  "name": "Rsync",
+  "description": "Rsync file synchronization aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rsync",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "rsync-copy",
+      "value": "rsync -avz --progress -h"
+    },
+    {
+      "name": "rsync-move",
+      "value": "rsync -avz --progress -h --remove-source-files"
+    },
+    {
+      "name": "rsync-update",
+      "value": "rsync -avzu --progress -h"
+    },
+    {
+      "name": "rsync-synchronize",
+      "value": "rsync -avzu --delete --progress -h"
+    }
+  ]
+}
