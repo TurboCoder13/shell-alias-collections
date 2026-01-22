@@ -43,6 +43,7 @@ ALIAS_PATTERN = re.compile(
     (?P<quote>['"])            # Opening quote
     (?P<value>.+?)             # Alias value (non-greedy)
     (?P=quote)                 # Matching closing quote
+    (?:\s*\#.*)?               # Optional trailing comment
     \s*$                       # End of line
     """,
     re.VERBOSE | re.MULTILINE,
@@ -418,6 +419,10 @@ def update_manifest(synced_plugins: Sequence[str], *, dry_run: bool = False) -> 
 
     if dry_run:
         print(f"  [DRY RUN] Would update {updated_count} collections in manifest.json")
+        return
+
+    if updated_count == 0:
+        print("  No collections were modified, skipping manifest update")
         return
 
     # Update version to indicate the change
