@@ -67,7 +67,7 @@ zip -rq "dist/shell-alias-collections-$VERSION.zip" \
 
 # Generate checksums
 echo "Generating checksums..."
-(cd dist && sha256sum *.tar.gz *.zip >SHA256SUMS.txt)
+(cd dist && sha256sum ./*.tar.gz ./*.zip >SHA256SUMS.txt)
 cat dist/SHA256SUMS.txt
 
 # Create GitHub release (handle idempotency)

@@ -2,14 +2,14 @@
 set -euo pipefail
 
 # run-lintro.sh
-# Runs lintro check and captures output for CI.
+# Runs lintro check in Docker and captures output for CI.
 #
 # Usage:
 #   scripts/ci/run-lintro.sh
 
 if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
 	cat <<'EOF'
-Runs lintro check and captures output for CI.
+Runs lintro check in Docker and captures output for CI.
 
 Usage:
   scripts/ci/run-lintro.sh
@@ -26,12 +26,13 @@ EOF
 fi
 
 OUTPUT_FILE="lintro-output.txt"
+LINTRO_IMAGE="ghcr.io/turbocoder13/py-lintro:latest"
 
-echo "Running lintro check..."
+echo "Running lintro check in Docker..."
 
-# Run lintro and capture output, preserving exit code
+# Run lintro in Docker container and capture output, preserving exit code
 set +e
-uv tool run lintro check . --output-format grid 2>&1 | tee "$OUTPUT_FILE"
+docker run --rm -v "$PWD:/code" -w /code "$LINTRO_IMAGE" lintro check . 2>&1 | tee "$OUTPUT_FILE"
 EXIT_CODE=${PIPESTATUS[0]}
 set -e
 
