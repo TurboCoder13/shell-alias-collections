@@ -83,7 +83,7 @@ docker run --rm -v "$PWD:/code" -w /code "$LINTRO_IMAGE" lintro format . || true
 
 # Commit and push (include any files formatted by lintro)
 git add manifest.json
-git add -u  # Stage any modified tracked files (from formatting)
+git add -u # Stage any modified tracked files (from formatting)
 git commit -m "chore(release): prepare v$NEXT_VERSION"
 git push -u origin "release/v$NEXT_VERSION"
 

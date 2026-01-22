@@ -19,7 +19,7 @@ import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from collections.abc import Sequence
@@ -251,7 +251,8 @@ def fetch_url(url: str) -> str:
     # nosec B310 - URLs are hardcoded to trusted GitHub sources
     # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected
     with urllib.request.urlopen(url, timeout=30) as response:  # noqa: S310
-        return response.read().decode("utf-8")
+        content: bytes = response.read()
+        return content.decode("utf-8")
 
 
 def parse_aliases(content: str) -> list[ParsedAlias]:
@@ -314,7 +315,7 @@ def create_curated_json(
     plugin: PluginConfig,
     aliases: list[ParsedAlias],
     omz_commit: str | None = None,
-) -> dict:
+) -> dict[str, Any]:
     """Create a curated collection JSON structure."""
     today = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
 
@@ -349,8 +350,10 @@ def get_omz_latest_commit() -> str | None:
         # nosec B310 - URL is hardcoded to trusted GitHub API
         # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected
         with urllib.request.urlopen(url, timeout=10) as response:  # noqa: S310
-            data = json.loads(response.read().decode("utf-8"))
-            return data.get("sha", "")[:7]  # Short SHA
+            content: bytes = response.read()
+            data: dict[str, Any] = json.loads(content.decode("utf-8"))
+            sha: str = data.get("sha", "")
+            return sha[:7]  # Short SHA
     except Exception:
         return None
 
