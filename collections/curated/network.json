@@ -41,14 +41,18 @@
     {
       "name": "ports",
       "value": "netstat -tulanp",
-      "description": "Show open ports"
+      "description": "Show open ports (Linux)"
     },
     {
       "name": "listening",
       "value": "lsof -i -P | grep LISTEN",
       "description": "Show listening ports"
     },
-    { "name": "wget", "value": "wget -c", "description": "Continue downloads" },
+    {
+      "name": "wgetc",
+      "value": "wget -c",
+      "description": "Continue downloads"
+    },
     { "name": "header", "value": "curl -I", "description": "Get HTTP headers" },
     {
       "name": "headerc",
@@ -62,8 +66,8 @@
     },
     {
       "name": "speedtest",
-      "value": "curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -",
-      "description": "Run speed test"
+      "value": "speedtest-cli",
+      "description": "Run speed test (requires: pip install speedtest-cli)"
     }
   ]
 }

@@ -28,8 +28,6 @@
       "value": "cd ../../..",
       "description": "Go up three directories"
     },
-    { "name": "~", "value": "cd ~", "description": "Go to home directory" },
-    { "name": "-", "value": "cd -", "description": "Go to previous directory" },
     {
       "name": "ll",
       "value": "ls -lah",

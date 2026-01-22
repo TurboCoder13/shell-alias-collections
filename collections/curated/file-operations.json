@@ -24,12 +24,12 @@
     },
     {
       "name": "egrep",
-      "value": "egrep --color=auto",
+      "value": "grep -E --color=auto",
       "description": "Extended grep with color"
     },
     {
       "name": "fgrep",
-      "value": "fgrep --color=auto",
+      "value": "grep -F --color=auto",
       "description": "Fixed grep with color"
     },
     { "name": "h", "value": "history", "description": "Show command history" },
@@ -44,7 +44,7 @@
       "description": "Find file by name"
     },
     {
-      "name": "fd",
+      "name": "fdir",
       "value": "find . -type d -name",
       "description": "Find directory by name"
     },

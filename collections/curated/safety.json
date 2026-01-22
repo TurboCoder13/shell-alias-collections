@@ -14,17 +14,24 @@
   },
   "aliases": [
     {
-      "name": "rm",
+      "name": "rmi",
       "value": "rm -i",
       "description": "Remove with confirmation"
     },
-    { "name": "cp", "value": "cp -i", "description": "Copy with confirmation" },
-    { "name": "mv", "value": "mv -i", "description": "Move with confirmation" },
-    { "name": "ln", "value": "ln -i", "description": "Link with confirmation" },
     {
-      "name": "rmf",
-      "value": "rm -rf",
-      "description": "Force remove (use carefully)"
+      "name": "cpi",
+      "value": "cp -i",
+      "description": "Copy with confirmation"
+    },
+    {
+      "name": "mvi",
+      "value": "mv -i",
+      "description": "Move with confirmation"
+    },
+    {
+      "name": "lni",
+      "value": "ln -i",
+      "description": "Link with confirmation"
     },
     {
       "name": "chown",

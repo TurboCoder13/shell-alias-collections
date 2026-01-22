@@ -26,23 +26,35 @@
     {
       "name": "psmem",
       "value": "ps aux --sort=-%mem | head",
-      "description": "Top memory processes"
+      "description": "Top memory processes (Linux)"
     },
     {
       "name": "pscpu",
       "value": "ps aux --sort=-%cpu | head",
-      "description": "Top CPU processes"
+      "description": "Top CPU processes (Linux)"
     },
     { "name": "k9", "value": "kill -9", "description": "Force kill process" },
     { "name": "ka", "value": "killall", "description": "Kill by name" },
     {
       "name": "meminfo",
       "value": "free -h",
-      "description": "Memory information"
+      "description": "Memory information (Linux)"
     },
-    { "name": "cpuinfo", "value": "lscpu", "description": "CPU information" },
-    { "name": "topc", "value": "top -o %CPU", "description": "Top by CPU" },
-    { "name": "topm", "value": "top -o %MEM", "description": "Top by memory" },
+    {
+      "name": "cpuinfo",
+      "value": "lscpu",
+      "description": "CPU information (Linux)"
+    },
+    {
+      "name": "topc",
+      "value": "top -o %CPU",
+      "description": "Top by CPU (Linux)"
+    },
+    {
+      "name": "topm",
+      "value": "top -o %MEM",
+      "description": "Top by memory (Linux)"
+    },
     {
       "name": "path",
       "value": "echo $PATH | tr \":\" \"\\n\"",

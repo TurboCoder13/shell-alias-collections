@@ -107,7 +107,7 @@
     },
     {
       "name": "grh",
-      "value": "git reset HEAD",
+      "value": "git restore --staged",
       "description": "Unstage changes"
     },
     {
