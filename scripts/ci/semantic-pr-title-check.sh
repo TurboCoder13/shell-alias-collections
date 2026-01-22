@@ -59,6 +59,13 @@ ci
 revert"
 
 TYPES="${TYPES_INPUT:-$DEFAULT_TYPES}"
+# Handle empty TYPES_INPUT (explicitly set to empty string)
+if [[ -z "$TYPES" ]]; then
+	TYPES="$DEFAULT_TYPES"
+fi
+
+# Sanitize TYPES: remove carriage returns, trim whitespace, filter empty lines
+TYPES=$(echo "$TYPES" | tr -d '\r' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | grep -v '^$')
 
 # Build regex pattern from types
 types_pattern=$(echo "$TYPES" | tr '\n' '|' | sed 's/|$//')

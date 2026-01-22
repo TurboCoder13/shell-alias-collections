@@ -50,6 +50,10 @@ done
 
 # Determine version and whether to proceed
 if [[ -n "$MANUAL_VERSION" ]]; then
+	if ! [[ "$MANUAL_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+		echo "Error: --version must be in X.Y.Z format" >&2
+		exit 1
+	fi
 	VERSION="$MANUAL_VERSION"
 	echo "Manual version override: $VERSION"
 else

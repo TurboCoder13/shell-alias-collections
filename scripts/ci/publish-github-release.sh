@@ -49,7 +49,8 @@ if [[ "$MANIFEST_VERSION" != "$VERSION" ]]; then
 fi
 echo "Version verified: $MANIFEST_VERSION"
 
-# Create artifacts directory
+# Create clean artifacts directory
+rm -rf dist
 mkdir -p dist
 
 # Create tarball
