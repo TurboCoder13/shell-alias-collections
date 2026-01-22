@@ -74,8 +74,8 @@ types_pattern=$(echo "$TYPES" | tr '\n' '|' | sed 's/|$//')
 # - type: one of the allowed types
 # - scope: optional, in parentheses
 # - description: starts with lowercase, no period at end
-# Pattern allows single-char descriptions: [a-z](.+[^.])? matches "x" or "xyz..."
-pattern="^($types_pattern)(\([a-z0-9_-]+\))?: [a-z](.+[^.])?$"
+# Pattern: description starts lowercase, no trailing period, min 1 char
+pattern="^($types_pattern)(\([a-z0-9_-]+\))?: [a-z](.*[^.])?$"
 
 echo "Validating PR title: $PR_TITLE"
 echo ""
