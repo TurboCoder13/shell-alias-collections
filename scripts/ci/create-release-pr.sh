@@ -68,6 +68,9 @@ git config user.email "github-actions[bot]@users.noreply.github.com"
 # Clean up any existing local branch from previous failed runs
 git branch -D "release/v$NEXT_VERSION" 2>/dev/null || true
 
+# Clean up any stale remote branch (from closed PRs without merge)
+git push origin --delete "release/v$NEXT_VERSION" 2>/dev/null || true
+
 git checkout -b "release/v$NEXT_VERSION"
 
 # Update manifest version
