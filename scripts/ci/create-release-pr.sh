@@ -31,6 +31,13 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Skip if the last commit is already a release commit (prevents loop)
+LAST_COMMIT_MSG=$(git log -1 --format="%s")
+if [[ "$LAST_COMMIT_MSG" =~ ^chore\(release\): ]]; then
+	echo "Last commit is a release commit, skipping to prevent loop"
+	exit 0
+fi
+
 # Get current version
 CURRENT_VERSION=$(jq -r '.version' manifest.json)
 echo "Current version: $CURRENT_VERSION"
