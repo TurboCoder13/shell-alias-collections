@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -248,9 +249,10 @@ PLUGINS: list[PluginConfig] = [
 def fetch_url(url: str) -> str:
     """Fetch content from a URL."""
     print(f"  Fetching: {url}")
-    # nosec B310 - URLs are hardcoded to trusted GitHub sources
-    # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected
-    with urllib.request.urlopen(url, timeout=30) as response:  # noqa: S310
+    # URLs are hardcoded to trusted OMZ GitHub sources, not user-controlled
+    # nosec B310
+    # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+    with urllib.request.urlopen(url, timeout=30) as response:  # noqa: S310 - same as above
         content: bytes = response.read()
         return content.decode("utf-8")
 
@@ -306,7 +308,7 @@ def fetch_omz_plugin(plugin_id: str) -> list[ParsedAlias]:
     try:
         content = fetch_url(url)
         return parse_aliases(content)
-    except Exception as e:
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError) as e:
         print(f"  Warning: Failed to fetch {plugin_id}: {e}")
         return []
 
@@ -347,14 +349,15 @@ def get_omz_latest_commit() -> str | None:
     """Get the latest commit SHA from Oh My Zsh master branch."""
     try:
         url = "https://api.github.com/repos/ohmyzsh/ohmyzsh/commits/master"
-        # nosec B310 - URL is hardcoded to trusted GitHub API
-        # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected
-        with urllib.request.urlopen(url, timeout=10) as response:  # noqa: S310
+        # URL is hardcoded to trusted GitHub API, not user-controlled
+        # nosec B310
+        # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
+        with urllib.request.urlopen(url, timeout=10) as response:  # noqa: S310 - same as above
             content: bytes = response.read()
             data: dict[str, Any] = json.loads(content.decode("utf-8"))
             sha: str = data.get("sha", "")
             return sha[:7]  # Short SHA
-    except Exception:
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, json.JSONDecodeError):
         return None
 
 

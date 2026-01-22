@@ -16,6 +16,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      packages: read
     name: Compute next version and open Release PR
     runs-on: ubuntu-24.04
     timeout-minutes: 10
