@@ -348,11 +348,11 @@
   ],
 
   "categories": [
-    { "id": "Development", "order": 1 },
-    { "id": "DevOps", "order": 2 },
-    { "id": "System", "order": 3 },
-    { "id": "Utilities", "order": 4 },
-    { "id": "Community", "order": 5 }
+    { "id": "Development", "name": "Development", "order": 1 },
+    { "id": "DevOps", "name": "DevOps", "order": 2 },
+    { "id": "System", "name": "System", "order": 3 },
+    { "id": "Utilities", "name": "Utilities", "order": 4 },
+    { "id": "Community", "name": "Community", "order": 5 }
   ],
 
   "sources": {
