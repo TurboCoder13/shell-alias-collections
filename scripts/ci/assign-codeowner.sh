@@ -51,9 +51,15 @@ if [[ ! -f ".github/CODEOWNERS" ]]; then
 	exit 0
 fi
 
-# Extract usernames from CODEOWNERS, filter out team entries (@org/team)
-owners=$(grep -oE '@[a-zA-Z0-9_/-]+' .github/CODEOWNERS |
-	sort -u | tr -d '@' | grep -E '^[A-Za-z0-9_-]+$' || true)
+# Extract usernames from CODEOWNERS using token-based parsing
+# Only accepts tokens that are exactly @username (no dots, slashes, or emails)
+owners=$(awk '{
+	for (i = 1; i <= NF; i++) {
+		if ($i ~ /^@[A-Za-z0-9_-]+$/) {
+			print substr($i, 2)
+		}
+	}
+}' .github/CODEOWNERS | sort -u | grep -E '^[A-Za-z0-9_-]+$' || true)
 
 if [[ -z "$owners" ]]; then
 	echo "No valid individual CODEOWNERS found, skipping assignment"

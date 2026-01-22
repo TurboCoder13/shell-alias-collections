@@ -40,12 +40,20 @@ ENFORCE="${ENFORCE:-0}"
 WORKFLOW_DIR=".github/workflows"
 unpinned_count=0
 
+# Get repository owner for same-org action check
+# GITHUB_REPOSITORY_OWNER is set by GitHub Actions, fallback to parsing GITHUB_REPOSITORY
+REPO_OWNER="${GITHUB_REPOSITORY_OWNER:-}"
+if [[ -z "$REPO_OWNER" && -n "${GITHUB_REPOSITORY:-}" ]]; then
+	REPO_OWNER="${GITHUB_REPOSITORY%%/*}"
+fi
+
 if [[ ! -d "$WORKFLOW_DIR" ]]; then
 	echo "No workflows directory found, skipping check"
 	exit 0
 fi
 
 echo "Scanning workflow files for action pinning..."
+[[ -n "$REPO_OWNER" ]] && echo "Repository owner: $REPO_OWNER (tags allowed for same-owner actions)"
 echo ""
 
 while IFS= read -r -d '' file; do
@@ -62,13 +70,24 @@ while IFS= read -r -d '' file; do
 			# Skip local actions (start with ./)
 			[[ "$action" == ./* ]] && continue
 
+			# Extract action owner (first path component before /)
+			action_owner=""
+			if [[ "$action" =~ ^([^/]+)/ ]]; then
+				action_owner="${BASH_REMATCH[1]}"
+			fi
+
 			# Check if pinned to SHA (40 hex chars after @)
 			if [[ "$action" =~ @([a-f0-9]{40})$ ]]; then
 				echo "  ✓ $action"
 			elif [[ "$action" =~ @(.+)$ ]]; then
 				ref="${BASH_REMATCH[1]}"
-				echo "  ✗ $action (using tag: $ref)" >&2
-				unpinned_count=$((unpinned_count + 1))
+				# Allow tags for same-owner actions
+				if [[ -n "$REPO_OWNER" && "$action_owner" == "$REPO_OWNER" ]]; then
+					echo "  ✓ $action (same-owner, tag allowed)"
+				else
+					echo "  ✗ $action (using tag: $ref)" >&2
+					unpinned_count=$((unpinned_count + 1))
+				fi
 			fi
 		fi
 	done < <(grep -E '^\s*uses:' "$file" 2>/dev/null || true)

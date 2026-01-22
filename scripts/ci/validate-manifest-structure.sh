@@ -69,6 +69,7 @@ for (const col of manifest.collections) {
 const categoryIds = new Set();
 for (const cat of manifest.categories) {
   if (!cat.id) throw new Error('Category missing id');
+  if (!cat.name) throw new Error('Category ' + cat.id + ' missing name');
   if (typeof cat.order !== 'number') throw new Error('Category ' + cat.id + ' missing order');
   if (categoryIds.has(cat.id)) throw new Error('Duplicate category id: ' + cat.id);
   categoryIds.add(cat.id);

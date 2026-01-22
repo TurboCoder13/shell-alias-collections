@@ -39,16 +39,18 @@ fi
 
 echo ""
 echo "Validating curated collections..."
-for file in collections/curated/*.json; do
-	if [[ -f "$file" ]]; then
+if compgen -G "collections/curated/*.json" >/dev/null 2>&1; then
+	for file in collections/curated/*.json; do
 		if python3 -m json.tool "$file" >/dev/null 2>&1; then
 			echo "  ✓ $file"
 		else
 			echo "  ✗ $file is invalid JSON" >&2
 			errors=$((errors + 1))
 		fi
-	fi
-done
+	done
+else
+	echo "  (no curated collections found)"
+fi
 
 echo ""
 echo "Validating community collections..."

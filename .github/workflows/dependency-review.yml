@@ -36,4 +36,3 @@ jobs:
         with:
           fail-on-severity: high
           comment-summary-in-pr: ${{ github.event.pull_request.head.repo.fork == false }}
-          allow-ghsas: true

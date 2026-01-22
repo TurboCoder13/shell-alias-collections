@@ -28,18 +28,24 @@ EOF
 	exit 0
 fi
 
+# Resolve paths from script location for path-independent execution
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+export ROOT_DIR
+
 echo "Checking curated collection files exist..."
 node -e "
 const fs = require('fs');
-const manifest = JSON.parse(fs.readFileSync('manifest.json', 'utf8'));
+const path = require('path');
+const root = process.env.ROOT_DIR;
+const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
 
 for (const col of manifest.collections) {
   if (col.source.type === 'curated') {
-    const path = col.source.path;
-    if (!fs.existsSync(path)) {
-      throw new Error('Curated collection file not found: ' + path);
+    const filePath = path.join(root, col.source.path);
+    if (!fs.existsSync(filePath)) {
+      throw new Error('Curated collection file not found: ' + col.source.path);
     }
-    console.log('  ✓ ' + path);
+    console.log('  ✓ ' + col.source.path);
   }
 }
 console.log('All curated collection files exist!');
@@ -50,8 +56,9 @@ echo "Validating curated collection structure..."
 node -e "
 const fs = require('fs');
 const path = require('path');
+const root = process.env.ROOT_DIR;
 
-const curatedDir = 'collections/curated';
+const curatedDir = path.join(root, 'collections/curated');
 const files = fs.readdirSync(curatedDir).filter(f => f.endsWith('.json'));
 
 for (const file of files) {
