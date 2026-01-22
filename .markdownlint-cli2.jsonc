@@ -1,0 +1,27 @@
+{
+  // Markdownlint configuration for shell-alias-collections
+  // https://github.com/DavidAnson/markdownlint-cli2
+  "config": {
+    "default": true,
+    // Allow longer lines for URLs and code blocks
+    "MD013": {
+      "line_length": 120,
+      "code_blocks": false,
+      "tables": false
+    },
+    // Allow duplicate headings in different sections
+    "MD024": {
+      "siblings_only": true
+    },
+    // Allow inline HTML for badges and special formatting
+    "MD033": false,
+    // Allow bare URLs (common in documentation)
+    "MD034": false
+  },
+  "ignores": [
+    ".lintro/**",
+    ".venv/**",
+    "node_modules/**",
+    ".git/**"
+  ]
+}

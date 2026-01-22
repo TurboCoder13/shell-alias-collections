@@ -248,7 +248,9 @@ PLUGINS: list[PluginConfig] = [
 def fetch_url(url: str) -> str:
     """Fetch content from a URL."""
     print(f"  Fetching: {url}")
-    with urllib.request.urlopen(url, timeout=30) as response:
+    # nosec B310 - URLs are hardcoded to trusted GitHub sources
+    # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected
+    with urllib.request.urlopen(url, timeout=30) as response:  # noqa: S310
         return response.read().decode("utf-8")
 
 
@@ -324,10 +326,7 @@ def create_curated_json(
         "syncedAt": today,
         "attribution": {
             "source": "Oh My Zsh",
-            "sourceUrl": (
-                "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/"
-                f"{plugin.plugin_id}"
-            ),
+            "sourceUrl": (f"https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/{plugin.plugin_id}"),
             "license": "MIT",
             "omzCommit": omz_commit,
         },
@@ -347,7 +346,9 @@ def get_omz_latest_commit() -> str | None:
     """Get the latest commit SHA from Oh My Zsh master branch."""
     try:
         url = "https://api.github.com/repos/ohmyzsh/ohmyzsh/commits/master"
-        with urllib.request.urlopen(url, timeout=10) as response:
+        # nosec B310 - URL is hardcoded to trusted GitHub API
+        # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected
+        with urllib.request.urlopen(url, timeout=10) as response:  # noqa: S310
             data = json.loads(response.read().decode("utf-8"))
             return data.get("sha", "")[:7]  # Short SHA
     except Exception:

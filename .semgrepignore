@@ -1,0 +1,15 @@
+# Semgrep ignore patterns
+# Ignore virtual environments and build artifacts
+.venv/
+__pycache__/
+node_modules/
+.lintro/
+dist/
+build/
+
+# Ignore test files for security rules
+**/test_*.py
+**/*_test.py
+
+# Ignore utility scripts (internal tools with hardcoded trusted URLs)
+scripts/sync_omz.py

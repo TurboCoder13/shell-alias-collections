@@ -1,0 +1,83 @@
+---
+# Lintro Configuration
+# https://github.com/TurboCoder13/py-lintro
+
+enforce:
+  line_length: 120
+
+execution:
+  enabled_tools: []
+  tool_order: "priority"
+  fail_fast: false
+  parallel: true
+  max_workers: 10
+
+# Fallback configurations for tools without native config files
+defaults:
+  markdownlint:
+    MD013:
+      line_length: 120
+      code_blocks: false
+      tables: false
+    MD024:
+      siblings_only: true
+    MD033: false
+    MD034: false
+
+  yamllint:
+    extends: "default"
+    rules:
+      document-start: "disable"
+      truthy:
+        check-keys: false
+      line-length:
+        max: 120
+        allow-non-breakable-inline-mappings: true
+
+# Tool enable/disable settings
+tools:
+  # Enabled tools
+  prettier:
+    enabled: true
+  black:
+    enabled: true
+  ruff:
+    enabled: true
+  biome:
+    enabled: true
+  markdownlint:
+    enabled: true
+  yamllint:
+    enabled: true
+  actionlint:
+    enabled: true
+  shellcheck:
+    enabled: true
+  shfmt:
+    enabled: true
+  bandit:
+    enabled: true
+  gitleaks:
+    enabled: true
+  taplo:
+    enabled: true
+  hadolint:
+    enabled: true
+  clippy:
+    enabled: true
+  rustfmt:
+    enabled: true
+  sqlfluff:
+    enabled: true
+  cargo_audit:
+    enabled: true
+
+  # Disabled tools
+  semgrep:
+    enabled: false
+  mypy:
+    enabled: false
+  darglint:
+    enabled: false
+  pytest:
+    enabled: false
