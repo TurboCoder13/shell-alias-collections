@@ -1,14 +1,16 @@
 {
-  "version": "1.0.2",
+  "version": "1.1.0",
   "lastUpdated": "2026-01-22",
-
   "collections": [
     {
       "id": "git-essentials",
       "name": "Git Essentials",
       "description": "Common git shortcuts for everyday use",
       "category": "Development",
-      "tags": ["git", "version-control"],
+      "tags": [
+        "git",
+        "version-control"
+      ],
       "source": {
         "type": "curated",
         "path": "collections/curated/git-essentials.json"
@@ -19,7 +21,12 @@
       "name": "Navigation",
       "description": "Directory navigation and listing shortcuts",
       "category": "Utilities",
-      "tags": ["cd", "ls", "navigation", "directory"],
+      "tags": [
+        "cd",
+        "ls",
+        "navigation",
+        "directory"
+      ],
       "source": {
         "type": "curated",
         "path": "collections/curated/navigation.json"
@@ -30,7 +37,12 @@
       "name": "Safety",
       "description": "Safer defaults for destructive commands",
       "category": "System",
-      "tags": ["rm", "cp", "mv", "safety"],
+      "tags": [
+        "rm",
+        "cp",
+        "mv",
+        "safety"
+      ],
       "source": {
         "type": "curated",
         "path": "collections/curated/safety.json"
@@ -41,7 +53,12 @@
       "name": "File Operations",
       "description": "File manipulation and management shortcuts",
       "category": "Utilities",
-      "tags": ["files", "grep", "find", "disk"],
+      "tags": [
+        "files",
+        "grep",
+        "find",
+        "disk"
+      ],
       "source": {
         "type": "curated",
         "path": "collections/curated/file-operations.json"
@@ -52,7 +69,12 @@
       "name": "System Admin",
       "description": "System administration and process management",
       "category": "System",
-      "tags": ["process", "memory", "network", "admin"],
+      "tags": [
+        "process",
+        "memory",
+        "network",
+        "admin"
+      ],
       "source": {
         "type": "curated",
         "path": "collections/curated/system-admin.json"
@@ -63,7 +85,12 @@
       "name": "Network",
       "description": "Network diagnostics and utilities",
       "category": "System",
-      "tags": ["network", "ip", "dns", "ping"],
+      "tags": [
+        "network",
+        "ip",
+        "dns",
+        "ping"
+      ],
       "source": {
         "type": "curated",
         "path": "collections/curated/network.json"
@@ -74,7 +101,10 @@
       "name": "Git (OMZ)",
       "description": "Git aliases from Oh My Zsh",
       "category": "Development",
-      "tags": ["git", "version-control"],
+      "tags": [
+        "git",
+        "version-control"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "git"
@@ -85,7 +115,11 @@
       "name": "NPM",
       "description": "NPM package manager aliases",
       "category": "Development",
-      "tags": ["npm", "node", "javascript"],
+      "tags": [
+        "npm",
+        "node",
+        "javascript"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "npm"
@@ -96,7 +130,11 @@
       "name": "Yarn",
       "description": "Yarn package manager aliases",
       "category": "Development",
-      "tags": ["yarn", "node", "javascript"],
+      "tags": [
+        "yarn",
+        "node",
+        "javascript"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "yarn"
@@ -107,7 +145,10 @@
       "name": "Python",
       "description": "Python development aliases",
       "category": "Development",
-      "tags": ["python", "py"],
+      "tags": [
+        "python",
+        "py"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "python"
@@ -118,7 +159,11 @@
       "name": "Pip",
       "description": "Python pip package manager aliases",
       "category": "Development",
-      "tags": ["pip", "python", "packages"],
+      "tags": [
+        "pip",
+        "python",
+        "packages"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "pip"
@@ -129,7 +174,10 @@
       "name": "Go",
       "description": "Go language development aliases",
       "category": "Development",
-      "tags": ["go", "golang"],
+      "tags": [
+        "go",
+        "golang"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "golang"
@@ -140,7 +188,10 @@
       "name": "Rust",
       "description": "Rust language development aliases",
       "category": "Development",
-      "tags": ["rust", "cargo"],
+      "tags": [
+        "rust",
+        "cargo"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "rust"
@@ -151,7 +202,10 @@
       "name": "Rails",
       "description": "Ruby on Rails development aliases",
       "category": "Development",
-      "tags": ["rails", "ruby"],
+      "tags": [
+        "rails",
+        "ruby"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "rails"
@@ -162,7 +216,11 @@
       "name": "Bundler",
       "description": "Ruby Bundler aliases",
       "category": "Development",
-      "tags": ["bundler", "ruby", "gems"],
+      "tags": [
+        "bundler",
+        "ruby",
+        "gems"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "bundler"
@@ -173,7 +231,10 @@
       "name": "Docker",
       "description": "Docker container aliases",
       "category": "DevOps",
-      "tags": ["docker", "containers"],
+      "tags": [
+        "docker",
+        "containers"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "docker"
@@ -184,7 +245,11 @@
       "name": "Docker Compose",
       "description": "Docker Compose orchestration aliases",
       "category": "DevOps",
-      "tags": ["docker", "compose", "containers"],
+      "tags": [
+        "docker",
+        "compose",
+        "containers"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "docker-compose"
@@ -195,7 +260,11 @@
       "name": "Kubernetes",
       "description": "Kubernetes kubectl aliases",
       "category": "DevOps",
-      "tags": ["kubernetes", "k8s", "kubectl"],
+      "tags": [
+        "kubernetes",
+        "k8s",
+        "kubectl"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "kubectl"
@@ -206,7 +275,10 @@
       "name": "Terraform",
       "description": "Terraform infrastructure as code aliases",
       "category": "DevOps",
-      "tags": ["terraform", "infrastructure"],
+      "tags": [
+        "terraform",
+        "infrastructure"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "terraform"
@@ -217,7 +289,10 @@
       "name": "AWS CLI",
       "description": "Amazon Web Services CLI aliases",
       "category": "DevOps",
-      "tags": ["aws", "cloud"],
+      "tags": [
+        "aws",
+        "cloud"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "aws"
@@ -228,7 +303,11 @@
       "name": "Google Cloud",
       "description": "Google Cloud Platform aliases",
       "category": "DevOps",
-      "tags": ["gcloud", "gcp", "cloud"],
+      "tags": [
+        "gcloud",
+        "gcp",
+        "cloud"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "gcloud"
@@ -239,7 +318,10 @@
       "name": "Heroku",
       "description": "Heroku platform aliases",
       "category": "DevOps",
-      "tags": ["heroku", "paas"],
+      "tags": [
+        "heroku",
+        "paas"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "heroku"
@@ -250,7 +332,11 @@
       "name": "Homebrew",
       "description": "Homebrew package manager aliases",
       "category": "System",
-      "tags": ["brew", "homebrew", "macos"],
+      "tags": [
+        "brew",
+        "homebrew",
+        "macos"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "brew"
@@ -261,7 +347,11 @@
       "name": "macOS",
       "description": "macOS-specific aliases",
       "category": "System",
-      "tags": ["macos", "osx", "apple"],
+      "tags": [
+        "macos",
+        "osx",
+        "apple"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "macos"
@@ -272,7 +362,11 @@
       "name": "Systemd",
       "description": "Linux systemd service management aliases",
       "category": "System",
-      "tags": ["systemd", "linux", "services"],
+      "tags": [
+        "systemd",
+        "linux",
+        "services"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "systemd"
@@ -283,7 +377,11 @@
       "name": "Ubuntu",
       "description": "Ubuntu Linux aliases",
       "category": "System",
-      "tags": ["ubuntu", "linux", "apt"],
+      "tags": [
+        "ubuntu",
+        "linux",
+        "apt"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "ubuntu"
@@ -294,7 +392,11 @@
       "name": "Common Shell",
       "description": "Common shell aliases for everyday use",
       "category": "Utilities",
-      "tags": ["common", "shell", "general"],
+      "tags": [
+        "common",
+        "shell",
+        "general"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "common-aliases"
@@ -305,7 +407,11 @@
       "name": "Rsync",
       "description": "Rsync file synchronization aliases",
       "category": "Utilities",
-      "tags": ["rsync", "sync", "backup"],
+      "tags": [
+        "rsync",
+        "sync",
+        "backup"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "rsync"
@@ -316,7 +422,10 @@
       "name": "Tmux",
       "description": "Tmux terminal multiplexer aliases",
       "category": "Utilities",
-      "tags": ["tmux", "terminal"],
+      "tags": [
+        "tmux",
+        "terminal"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "tmux"
@@ -327,7 +436,10 @@
       "name": "Screen",
       "description": "GNU Screen terminal multiplexer aliases",
       "category": "Utilities",
-      "tags": ["screen", "terminal"],
+      "tags": [
+        "screen",
+        "terminal"
+      ],
       "source": {
         "type": "omz-plugin",
         "pluginId": "screen"
@@ -338,7 +450,11 @@
       "name": "General Utilities (Awesome Bash)",
       "description": "General purpose bash aliases from awesome-bash-alias",
       "category": "Utilities",
-      "tags": ["general", "utilities", "bash"],
+      "tags": [
+        "general",
+        "utilities",
+        "bash"
+      ],
       "source": {
         "type": "external",
         "url": "https://raw.githubusercontent.com/vikaskyadav/awesome-bash-alias/master/general_aliases.sh",
@@ -346,14 +462,28 @@
       }
     }
   ],
-
   "categories": [
-    { "id": "Development", "name": "Development", "order": 1 },
-    { "id": "DevOps", "name": "DevOps", "order": 2 },
-    { "id": "System", "name": "System", "order": 3 },
-    { "id": "Utilities", "name": "Utilities", "order": 4 }
+    {
+      "id": "Development",
+      "name": "Development",
+      "order": 1
+    },
+    {
+      "id": "DevOps",
+      "name": "DevOps",
+      "order": 2
+    },
+    {
+      "id": "System",
+      "name": "System",
+      "order": 3
+    },
+    {
+      "id": "Utilities",
+      "name": "Utilities",
+      "order": 4
+    }
   ],
-
   "sources": {
     "omz": {
       "name": "Oh My Zsh",
