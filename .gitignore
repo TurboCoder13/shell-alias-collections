@@ -1,5 +1,6 @@
 # Lintro output
 .lintro/
+uv.lock
 
 # Python
 .venv/
