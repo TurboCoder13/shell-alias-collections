@@ -1,0 +1,89 @@
+{
+  "id": "system-admin",
+  "name": "System Admin",
+  "description": "System administration and process management",
+  "version": "1.0.0",
+  "attribution": {
+    "inspirations": [
+      {
+        "name": "davidjguru",
+        "url": "https://davidjguru.github.io/blog/linux-70-commands-aliases-for-everyday-life"
+      },
+      {
+        "name": "nixCraft",
+        "url": "https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html"
+      }
+    ],
+    "contributors": []
+  },
+  "aliases": [
+    {
+      "name": "psg",
+      "value": "ps aux | grep -v grep | grep -i",
+      "description": "Search processes"
+    },
+    { "name": "psa", "value": "ps aux", "description": "List all processes" },
+    {
+      "name": "psmem",
+      "value": "ps aux --sort=-%mem | head",
+      "description": "Top memory processes (Linux)"
+    },
+    {
+      "name": "pscpu",
+      "value": "ps aux --sort=-%cpu | head",
+      "description": "Top CPU processes (Linux)"
+    },
+    { "name": "k9", "value": "kill -9", "description": "Force kill process" },
+    { "name": "ka", "value": "killall", "description": "Kill by name" },
+    {
+      "name": "meminfo",
+      "value": "free -h",
+      "description": "Memory information (Linux)"
+    },
+    {
+      "name": "cpuinfo",
+      "value": "lscpu",
+      "description": "CPU information (Linux)"
+    },
+    {
+      "name": "topc",
+      "value": "top -o %CPU",
+      "description": "Top by CPU (Linux)"
+    },
+    {
+      "name": "topm",
+      "value": "top -o %MEM",
+      "description": "Top by memory (Linux)"
+    },
+    {
+      "name": "path",
+      "value": "echo $PATH | tr \":\" \"\\n\"",
+      "description": "Show PATH entries"
+    },
+    {
+      "name": "now",
+      "value": "date +\"%Y-%m-%d %H:%M:%S\"",
+      "description": "Current date and time"
+    },
+    { "name": "week", "value": "date +%V", "description": "Week number" },
+    {
+      "name": "timer",
+      "value": "echo \"Timer started. Stop with Ctrl-D.\" && date && time cat && date",
+      "description": "Simple timer"
+    },
+    { "name": "cls", "value": "clear", "description": "Clear terminal" },
+    { "name": "c", "value": "clear", "description": "Short clear" },
+    { "name": "x", "value": "exit", "description": "Exit shell" },
+    { "name": "q", "value": "exit", "description": "Quick exit" },
+    {
+      "name": "reload",
+      "value": "source ~/.zshrc",
+      "description": "Reload zsh config"
+    },
+    {
+      "name": "zshrc",
+      "value": "${EDITOR:-vim} ~/.zshrc",
+      "description": "Edit zsh config"
+    }
+  ]
+}

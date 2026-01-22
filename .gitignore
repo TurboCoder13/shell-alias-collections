@@ -1,20 +1,72 @@
-# Lintro output
+# -------------------- Linting --------------------
 .lintro/
-uv.lock
 
-# Python
-.venv/
+# -------------------- Python --------------------
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
 .pytest_cache/
 
-# OS
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# UV
+uv.lock
+
+# -------------------- Node.js --------------------
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+.npm
+.yarn/cache
+
+# -------------------- Coverage/Test Reports --------------------
+coverage/
+report.xml
+report.html
+
+# -------------------- OS --------------------
 .DS_Store
 Thumbs.db
 
-# IDE
+# -------------------- IDE --------------------
 .vscode/
 .idea/
 *.swp
 *.swo
+*.iml
+.settings/
+.classpath
+.project

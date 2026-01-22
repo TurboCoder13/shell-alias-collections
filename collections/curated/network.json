@@ -1,0 +1,73 @@
+{
+  "id": "network",
+  "name": "Network",
+  "description": "Network diagnostics and utilities",
+  "version": "1.0.0",
+  "attribution": {
+    "inspirations": [
+      {
+        "name": "davidjguru",
+        "url": "https://davidjguru.github.io/blog/linux-70-commands-aliases-for-everyday-life"
+      },
+      {
+        "name": "nixCraft",
+        "url": "https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html"
+      }
+    ],
+    "contributors": []
+  },
+  "aliases": [
+    {
+      "name": "myip",
+      "value": "curl -s https://ipinfo.io/ip",
+      "description": "Show public IP"
+    },
+    {
+      "name": "localip",
+      "value": "ipconfig getifaddr en0",
+      "description": "Show local IP (macOS)"
+    },
+    {
+      "name": "ips",
+      "value": "ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'",
+      "description": "Show all IPs"
+    },
+    { "name": "ping5", "value": "ping -c 5", "description": "Ping 5 times" },
+    {
+      "name": "fastping",
+      "value": "ping -c 100 -i 0.2",
+      "description": "Fast ping test"
+    },
+    {
+      "name": "ports",
+      "value": "netstat -tulanp",
+      "description": "Show open ports (Linux)"
+    },
+    {
+      "name": "listening",
+      "value": "lsof -i -P | grep LISTEN",
+      "description": "Show listening ports"
+    },
+    {
+      "name": "wgetc",
+      "value": "wget -c",
+      "description": "Continue downloads"
+    },
+    { "name": "header", "value": "curl -I", "description": "Get HTTP headers" },
+    {
+      "name": "headerc",
+      "value": "curl -I --compress",
+      "description": "Get compressed headers"
+    },
+    {
+      "name": "flushdns",
+      "value": "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder",
+      "description": "Flush DNS cache (macOS)"
+    },
+    {
+      "name": "speedtest",
+      "value": "speedtest-cli",
+      "description": "Run speed test (requires: pip install speedtest-cli)"
+    }
+  ]
+}

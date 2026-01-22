@@ -1,0 +1,119 @@
+{
+  "id": "git-essentials",
+  "name": "Git Essentials",
+  "description": "Common git shortcuts for everyday use",
+  "version": "1.0.0",
+  "attribution": {
+    "inspirations": [
+      {
+        "name": "nixCraft",
+        "url": "https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html"
+      },
+      {
+        "name": "Oh My Zsh git plugin",
+        "url": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git"
+      }
+    ],
+    "contributors": []
+  },
+  "aliases": [
+    { "name": "g", "value": "git", "description": "Short for git" },
+    { "name": "ga", "value": "git add", "description": "Stage files" },
+    {
+      "name": "gaa",
+      "value": "git add --all",
+      "description": "Stage all changes"
+    },
+    {
+      "name": "gc",
+      "value": "git commit",
+      "description": "Commit staged changes"
+    },
+    {
+      "name": "gcm",
+      "value": "git commit -m",
+      "description": "Commit with message"
+    },
+    {
+      "name": "gca",
+      "value": "git commit --amend",
+      "description": "Amend last commit"
+    },
+    { "name": "gp", "value": "git push", "description": "Push to remote" },
+    {
+      "name": "gpf",
+      "value": "git push --force-with-lease",
+      "description": "Force push safely"
+    },
+    { "name": "gpl", "value": "git pull", "description": "Pull from remote" },
+    { "name": "gst", "value": "git status", "description": "Show status" },
+    {
+      "name": "gss",
+      "value": "git status -s",
+      "description": "Show short status"
+    },
+    { "name": "gd", "value": "git diff", "description": "Show diff" },
+    {
+      "name": "gds",
+      "value": "git diff --staged",
+      "description": "Show staged diff"
+    },
+    {
+      "name": "gco",
+      "value": "git checkout",
+      "description": "Checkout branch or files"
+    },
+    {
+      "name": "gcb",
+      "value": "git checkout -b",
+      "description": "Create and checkout new branch"
+    },
+    { "name": "gb", "value": "git branch", "description": "List branches" },
+    {
+      "name": "gba",
+      "value": "git branch -a",
+      "description": "List all branches"
+    },
+    { "name": "gbd", "value": "git branch -d", "description": "Delete branch" },
+    {
+      "name": "gl",
+      "value": "git log --oneline",
+      "description": "Show compact log"
+    },
+    {
+      "name": "glg",
+      "value": "git log --graph --oneline --all",
+      "description": "Show log graph"
+    },
+    { "name": "gf", "value": "git fetch", "description": "Fetch from remote" },
+    {
+      "name": "gfa",
+      "value": "git fetch --all",
+      "description": "Fetch all remotes"
+    },
+    { "name": "grb", "value": "git rebase", "description": "Rebase branch" },
+    {
+      "name": "grbi",
+      "value": "git rebase -i",
+      "description": "Interactive rebase"
+    },
+    { "name": "gm", "value": "git merge", "description": "Merge branch" },
+    { "name": "gsta", "value": "git stash", "description": "Stash changes" },
+    { "name": "gstp", "value": "git stash pop", "description": "Pop stash" },
+    {
+      "name": "gstl",
+      "value": "git stash list",
+      "description": "List stashes"
+    },
+    {
+      "name": "grh",
+      "value": "git restore --staged",
+      "description": "Unstage changes"
+    },
+    {
+      "name": "grhh",
+      "value": "git reset --hard HEAD",
+      "description": "Discard all changes"
+    }
+  ]
+}

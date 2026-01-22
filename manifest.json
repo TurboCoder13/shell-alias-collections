@@ -1,7 +1,379 @@
 {
   "version": "1.0.2",
   "lastUpdated": "2026-01-22",
-  "collections": [],
-  "categories": [],
-  "sources": {}
+
+  "collections": [
+    {
+      "id": "git-essentials",
+      "name": "Git Essentials",
+      "description": "Common git shortcuts for everyday use",
+      "category": "Development",
+      "tags": ["git", "version-control"],
+      "source": {
+        "type": "curated",
+        "path": "collections/curated/git-essentials.json"
+      }
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "description": "Directory navigation and listing shortcuts",
+      "category": "Utilities",
+      "tags": ["cd", "ls", "navigation", "directory"],
+      "source": {
+        "type": "curated",
+        "path": "collections/curated/navigation.json"
+      }
+    },
+    {
+      "id": "safety",
+      "name": "Safety",
+      "description": "Safer defaults for destructive commands",
+      "category": "System",
+      "tags": ["rm", "cp", "mv", "safety"],
+      "source": {
+        "type": "curated",
+        "path": "collections/curated/safety.json"
+      }
+    },
+    {
+      "id": "file-operations",
+      "name": "File Operations",
+      "description": "File manipulation and management shortcuts",
+      "category": "Utilities",
+      "tags": ["files", "grep", "find", "disk"],
+      "source": {
+        "type": "curated",
+        "path": "collections/curated/file-operations.json"
+      }
+    },
+    {
+      "id": "system-admin",
+      "name": "System Admin",
+      "description": "System administration and process management",
+      "category": "System",
+      "tags": ["process", "memory", "network", "admin"],
+      "source": {
+        "type": "curated",
+        "path": "collections/curated/system-admin.json"
+      }
+    },
+    {
+      "id": "network",
+      "name": "Network",
+      "description": "Network diagnostics and utilities",
+      "category": "System",
+      "tags": ["network", "ip", "dns", "ping"],
+      "source": {
+        "type": "curated",
+        "path": "collections/curated/network.json"
+      }
+    },
+    {
+      "id": "git",
+      "name": "Git (OMZ)",
+      "description": "Git aliases from Oh My Zsh",
+      "category": "Development",
+      "tags": ["git", "version-control"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "git"
+      }
+    },
+    {
+      "id": "npm",
+      "name": "NPM",
+      "description": "NPM package manager aliases",
+      "category": "Development",
+      "tags": ["npm", "node", "javascript"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "npm"
+      }
+    },
+    {
+      "id": "yarn",
+      "name": "Yarn",
+      "description": "Yarn package manager aliases",
+      "category": "Development",
+      "tags": ["yarn", "node", "javascript"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "yarn"
+      }
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "description": "Python development aliases",
+      "category": "Development",
+      "tags": ["python", "py"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "python"
+      }
+    },
+    {
+      "id": "pip",
+      "name": "Pip",
+      "description": "Python pip package manager aliases",
+      "category": "Development",
+      "tags": ["pip", "python", "packages"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "pip"
+      }
+    },
+    {
+      "id": "golang",
+      "name": "Go",
+      "description": "Go language development aliases",
+      "category": "Development",
+      "tags": ["go", "golang"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "golang"
+      }
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "description": "Rust language development aliases",
+      "category": "Development",
+      "tags": ["rust", "cargo"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "rust"
+      }
+    },
+    {
+      "id": "rails",
+      "name": "Rails",
+      "description": "Ruby on Rails development aliases",
+      "category": "Development",
+      "tags": ["rails", "ruby"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "rails"
+      }
+    },
+    {
+      "id": "bundler",
+      "name": "Bundler",
+      "description": "Ruby Bundler aliases",
+      "category": "Development",
+      "tags": ["bundler", "ruby", "gems"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "bundler"
+      }
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "description": "Docker container aliases",
+      "category": "DevOps",
+      "tags": ["docker", "containers"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "docker"
+      }
+    },
+    {
+      "id": "docker-compose",
+      "name": "Docker Compose",
+      "description": "Docker Compose orchestration aliases",
+      "category": "DevOps",
+      "tags": ["docker", "compose", "containers"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "docker-compose"
+      }
+    },
+    {
+      "id": "kubectl",
+      "name": "Kubernetes",
+      "description": "Kubernetes kubectl aliases",
+      "category": "DevOps",
+      "tags": ["kubernetes", "k8s", "kubectl"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "kubectl"
+      }
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "description": "Terraform infrastructure as code aliases",
+      "category": "DevOps",
+      "tags": ["terraform", "infrastructure"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "terraform"
+      }
+    },
+    {
+      "id": "aws",
+      "name": "AWS CLI",
+      "description": "Amazon Web Services CLI aliases",
+      "category": "DevOps",
+      "tags": ["aws", "cloud"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "aws"
+      }
+    },
+    {
+      "id": "gcloud",
+      "name": "Google Cloud",
+      "description": "Google Cloud Platform aliases",
+      "category": "DevOps",
+      "tags": ["gcloud", "gcp", "cloud"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "gcloud"
+      }
+    },
+    {
+      "id": "heroku",
+      "name": "Heroku",
+      "description": "Heroku platform aliases",
+      "category": "DevOps",
+      "tags": ["heroku", "paas"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "heroku"
+      }
+    },
+    {
+      "id": "brew",
+      "name": "Homebrew",
+      "description": "Homebrew package manager aliases",
+      "category": "System",
+      "tags": ["brew", "homebrew", "macos"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "brew"
+      }
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "description": "macOS-specific aliases",
+      "category": "System",
+      "tags": ["macos", "osx", "apple"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "macos"
+      }
+    },
+    {
+      "id": "systemd",
+      "name": "Systemd",
+      "description": "Linux systemd service management aliases",
+      "category": "System",
+      "tags": ["systemd", "linux", "services"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "systemd"
+      }
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu",
+      "description": "Ubuntu Linux aliases",
+      "category": "System",
+      "tags": ["ubuntu", "linux", "apt"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "ubuntu"
+      }
+    },
+    {
+      "id": "common-aliases",
+      "name": "Common Shell",
+      "description": "Common shell aliases for everyday use",
+      "category": "Utilities",
+      "tags": ["common", "shell", "general"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "common-aliases"
+      }
+    },
+    {
+      "id": "rsync",
+      "name": "Rsync",
+      "description": "Rsync file synchronization aliases",
+      "category": "Utilities",
+      "tags": ["rsync", "sync", "backup"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "rsync"
+      }
+    },
+    {
+      "id": "tmux",
+      "name": "Tmux",
+      "description": "Tmux terminal multiplexer aliases",
+      "category": "Utilities",
+      "tags": ["tmux", "terminal"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "tmux"
+      }
+    },
+    {
+      "id": "screen",
+      "name": "Screen",
+      "description": "GNU Screen terminal multiplexer aliases",
+      "category": "Utilities",
+      "tags": ["screen", "terminal"],
+      "source": {
+        "type": "omz-plugin",
+        "pluginId": "screen"
+      }
+    },
+    {
+      "id": "awesome-bash-general",
+      "name": "General Utilities (Awesome Bash)",
+      "description": "General purpose bash aliases from awesome-bash-alias",
+      "category": "Utilities",
+      "tags": ["general", "utilities", "bash"],
+      "source": {
+        "type": "external",
+        "url": "https://raw.githubusercontent.com/vikaskyadav/awesome-bash-alias/master/general_aliases.sh",
+        "parser": "bash"
+      }
+    }
+  ],
+
+  "categories": [
+    { "id": "Development", "name": "Development", "order": 1 },
+    { "id": "DevOps", "name": "DevOps", "order": 2 },
+    { "id": "System", "name": "System", "order": 3 },
+    { "id": "Utilities", "name": "Utilities", "order": 4 }
+  ],
+
+  "sources": {
+    "omz": {
+      "name": "Oh My Zsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "license": "MIT"
+    },
+    "awesome-bash-alias": {
+      "name": "Awesome Bash Alias",
+      "url": "https://github.com/vikaskyadav/awesome-bash-alias",
+      "author": "vikaskyadav"
+    },
+    "cyberciti": {
+      "name": "nixCraft",
+      "url": "https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html",
+      "type": "inspiration"
+    },
+    "davidjguru": {
+      "name": "davidjguru",
+      "url": "https://davidjguru.github.io/blog/linux-70-commands-aliases-for-everyday-life",
+      "type": "inspiration"
+    }
+  }
 }

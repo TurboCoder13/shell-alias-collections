@@ -1,0 +1,52 @@
+{
+  "id": "safety",
+  "name": "Safety",
+  "description": "Safer defaults for destructive commands",
+  "version": "1.0.0",
+  "attribution": {
+    "inspirations": [
+      {
+        "name": "nixCraft",
+        "url": "https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html"
+      }
+    ],
+    "contributors": []
+  },
+  "aliases": [
+    {
+      "name": "rmi",
+      "value": "rm -i",
+      "description": "Remove with confirmation"
+    },
+    {
+      "name": "cpi",
+      "value": "cp -i",
+      "description": "Copy with confirmation"
+    },
+    {
+      "name": "mvi",
+      "value": "mv -i",
+      "description": "Move with confirmation"
+    },
+    {
+      "name": "lni",
+      "value": "ln -i",
+      "description": "Link with confirmation"
+    },
+    {
+      "name": "chown",
+      "value": "chown --preserve-root",
+      "description": "Protect root directory"
+    },
+    {
+      "name": "chmod",
+      "value": "chmod --preserve-root",
+      "description": "Protect root directory"
+    },
+    {
+      "name": "chgrp",
+      "value": "chgrp --preserve-root",
+      "description": "Protect root directory"
+    }
+  ]
+}
