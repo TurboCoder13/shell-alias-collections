@@ -24,10 +24,6 @@
       "value": "apt source"
     },
     {
-      "name": "ags",
-      "value": "apt-get source"
-    },
-    {
       "name": "acp",
       "value": "apt-cache policy"
     },
@@ -48,7 +44,7 @@
     {
       "name": "afu",
       "value": "sudo apt-file update",
-      "description": "superuser operations ######################################################"
+      "description": "Update apt-file cache"
     },
     {
       "name": "ppap",

@@ -13,8 +13,7 @@
   "aliases": [
     {
       "name": "gob",
-      "value": "go build",
-      "description": "# aliases"
+      "value": "go build"
     },
     {
       "name": "goc",

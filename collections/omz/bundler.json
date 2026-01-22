@@ -13,8 +13,7 @@
   "aliases": [
     {
       "name": "ba",
-      "value": "bundle add",
-      "description": "# Aliases"
+      "value": "bundle add"
     },
     {
       "name": "bck",
@@ -30,7 +29,7 @@
     },
     {
       "name": "bi",
-      "value": "bundle_install"
+      "value": "bundle install"
     },
     {
       "name": "bl",

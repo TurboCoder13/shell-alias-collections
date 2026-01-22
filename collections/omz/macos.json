@@ -14,7 +14,7 @@
     {
       "name": "showfiles",
       "value": "defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder",
-      "description": "Show/hide hidden files in the Finder"
+      "description": "Show hidden files in Finder"
     },
     {
       "name": "hidefiles",

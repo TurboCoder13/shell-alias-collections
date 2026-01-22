@@ -16,10 +16,6 @@
       "value": "noglob pip3"
     },
     {
-      "name": "pip",
-      "value": "noglob pip"
-    },
-    {
       "name": "pipi",
       "value": "pip install"
     },

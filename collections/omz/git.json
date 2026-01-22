@@ -13,8 +13,7 @@
   "aliases": [
     {
       "name": "grt",
-      "value": "cd \"$(git rev-parse --show-toplevel || echo .)\"",
-      "description": "(in some cases force the alias order to match README, like for example gke and gk)"
+      "value": "cd \"$(git rev-parse --show-toplevel || echo .)\""
     },
     {
       "name": "ggpur",

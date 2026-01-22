@@ -34,7 +34,7 @@
     {
       "name": "kcuc",
       "value": "kubectl config use-context",
-      "description": "Manage configuration quickly to switch contexts between local, dev ad staging."
+      "description": "Manage configuration quickly to switch contexts between local, dev and staging."
     },
     {
       "name": "kcsc",

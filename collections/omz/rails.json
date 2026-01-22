@@ -289,10 +289,6 @@
       "value": "ruby script/destroy"
     },
     {
-      "name": "sd",
-      "value": "ruby script/server --debugger"
-    },
-    {
       "name": "sg",
       "value": "ruby script/generate"
     },

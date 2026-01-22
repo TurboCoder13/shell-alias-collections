@@ -261,7 +261,7 @@ def parse_aliases(content: str) -> list[ParsedAlias]:
 
     pending_comment: str | None = None
 
-    for i, line in enumerate(lines):
+    for line in lines:
         # Check for comment that might describe the next alias
         comment_match = COMMENT_PATTERN.match(line)
         if comment_match:
@@ -381,7 +381,7 @@ def sync_plugin(
     COLLECTIONS_DIR.mkdir(parents=True, exist_ok=True)
 
     output_path = COLLECTIONS_DIR / f"{plugin.plugin_id}.json"
-    with open(output_path, "w") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(collection, f, indent=2)
         f.write("\n")
 
@@ -393,7 +393,7 @@ def update_manifest(synced_plugins: Sequence[str], *, dry_run: bool = False) -> 
     """Update manifest.json to use curated sources for synced plugins."""
     print("\nUpdating manifest.json...")
 
-    with open(MANIFEST_PATH) as f:
+    with open(MANIFEST_PATH, encoding="utf-8") as f:
         manifest = json.load(f)
 
     updated_count = 0
@@ -417,11 +417,14 @@ def update_manifest(synced_plugins: Sequence[str], *, dry_run: bool = False) -> 
     # Update version to indicate the change
     # Bump patch version
     version_parts = manifest["version"].split(".")
-    version_parts[-1] = str(int(version_parts[-1]) + 1)
-    manifest["version"] = ".".join(version_parts)
+    try:
+        version_parts[-1] = str(int(version_parts[-1]) + 1)
+        manifest["version"] = ".".join(version_parts)
+    except (ValueError, IndexError):
+        print(f"  Warning: Could not bump version '{manifest['version']}', skipping")
     manifest["lastUpdated"] = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
 
-    with open(MANIFEST_PATH, "w") as f:
+    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
         f.write("\n")
 

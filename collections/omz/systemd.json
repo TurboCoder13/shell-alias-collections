@@ -12,36 +12,100 @@
   },
   "aliases": [
     {
+      "name": "sc-enable",
+      "value": "sudo systemctl enable"
+    },
+    {
       "name": "sc-enable-now",
-      "value": "sc-enable --now"
+      "value": "sudo systemctl enable --now"
+    },
+    {
+      "name": "sc-disable",
+      "value": "sudo systemctl disable"
     },
     {
       "name": "sc-disable-now",
-      "value": "sc-disable --now"
+      "value": "sudo systemctl disable --now"
+    },
+    {
+      "name": "sc-start",
+      "value": "sudo systemctl start"
+    },
+    {
+      "name": "sc-stop",
+      "value": "sudo systemctl stop"
+    },
+    {
+      "name": "sc-restart",
+      "value": "sudo systemctl restart"
+    },
+    {
+      "name": "sc-status",
+      "value": "systemctl status"
+    },
+    {
+      "name": "sc-mask",
+      "value": "sudo systemctl mask"
     },
     {
       "name": "sc-mask-now",
-      "value": "sc-mask --now"
+      "value": "sudo systemctl mask --now"
     },
     {
-      "name": "scu-enable-now",
-      "value": "scu-enable --now"
-    },
-    {
-      "name": "scu-disable-now",
-      "value": "scu-disable --now"
-    },
-    {
-      "name": "scu-mask-now",
-      "value": "scu-mask --now"
-    },
-    {
-      "name": "scu-failed",
-      "value": "systemctl --user --failed"
+      "name": "sc-unmask",
+      "value": "sudo systemctl unmask"
     },
     {
       "name": "sc-failed",
       "value": "systemctl --failed"
+    },
+    {
+      "name": "scu-enable",
+      "value": "systemctl --user enable"
+    },
+    {
+      "name": "scu-enable-now",
+      "value": "systemctl --user enable --now"
+    },
+    {
+      "name": "scu-disable",
+      "value": "systemctl --user disable"
+    },
+    {
+      "name": "scu-disable-now",
+      "value": "systemctl --user disable --now"
+    },
+    {
+      "name": "scu-start",
+      "value": "systemctl --user start"
+    },
+    {
+      "name": "scu-stop",
+      "value": "systemctl --user stop"
+    },
+    {
+      "name": "scu-restart",
+      "value": "systemctl --user restart"
+    },
+    {
+      "name": "scu-status",
+      "value": "systemctl --user status"
+    },
+    {
+      "name": "scu-mask",
+      "value": "systemctl --user mask"
+    },
+    {
+      "name": "scu-mask-now",
+      "value": "systemctl --user mask --now"
+    },
+    {
+      "name": "scu-unmask",
+      "value": "systemctl --user unmask"
+    },
+    {
+      "name": "scu-failed",
+      "value": "systemctl --user --failed"
     }
   ]
 }

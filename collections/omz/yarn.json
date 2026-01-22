@@ -125,8 +125,7 @@
     },
     {
       "name": "ydlx",
-      "value": "yarn dlx",
-      "description": "unique aliases"
+      "value": "yarn dlx"
     },
     {
       "name": "yn",
@@ -134,21 +133,11 @@
     },
     {
       "name": "yuil",
-      "value": "yarn upgrade-interactive --latest",
-      "description": "aliases that differ"
-    },
-    {
-      "name": "yii",
-      "value": "yarn install --frozen-lockfile"
-    },
-    {
-      "name": "yifl",
-      "value": "yarn install --frozen-lockfile"
+      "value": "yarn upgrade-interactive --latest"
     },
     {
       "name": "yga",
-      "value": "yarn global add",
-      "description": "unique aliases"
+      "value": "yarn global add"
     },
     {
       "name": "ygls",

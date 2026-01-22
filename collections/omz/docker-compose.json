@@ -13,79 +13,79 @@
   "aliases": [
     {
       "name": "dco",
-      "value": "$dccmd"
+      "value": "docker compose"
     },
     {
       "name": "dcb",
-      "value": "$dccmd build"
+      "value": "docker compose build"
     },
     {
       "name": "dce",
-      "value": "$dccmd exec"
+      "value": "docker compose exec"
     },
     {
       "name": "dcps",
-      "value": "$dccmd ps"
+      "value": "docker compose ps"
     },
     {
       "name": "dcrestart",
-      "value": "$dccmd restart"
+      "value": "docker compose restart"
     },
     {
       "name": "dcrm",
-      "value": "$dccmd rm"
+      "value": "docker compose rm"
     },
     {
       "name": "dcr",
-      "value": "$dccmd run"
+      "value": "docker compose run"
     },
     {
       "name": "dcstop",
-      "value": "$dccmd stop"
+      "value": "docker compose stop"
     },
     {
       "name": "dcup",
-      "value": "$dccmd up"
+      "value": "docker compose up"
     },
     {
       "name": "dcupb",
-      "value": "$dccmd up --build"
+      "value": "docker compose up --build"
     },
     {
       "name": "dcupd",
-      "value": "$dccmd up -d"
+      "value": "docker compose up -d"
     },
     {
       "name": "dcupdb",
-      "value": "$dccmd up -d --build"
+      "value": "docker compose up -d --build"
     },
     {
       "name": "dcdn",
-      "value": "$dccmd down"
+      "value": "docker compose down"
     },
     {
       "name": "dcl",
-      "value": "$dccmd logs"
+      "value": "docker compose logs"
     },
     {
       "name": "dclf",
-      "value": "$dccmd logs -f"
+      "value": "docker compose logs -f"
     },
     {
       "name": "dclF",
-      "value": "$dccmd logs -f --tail 0"
+      "value": "docker compose logs -f --tail 0"
     },
     {
       "name": "dcpull",
-      "value": "$dccmd pull"
+      "value": "docker compose pull"
     },
     {
       "name": "dcstart",
-      "value": "$dccmd start"
+      "value": "docker compose start"
     },
     {
       "name": "dck",
-      "value": "$dccmd kill"
+      "value": "docker compose kill"
     }
   ]
 }
