@@ -57,6 +57,10 @@ fi
 # Create release branch
 git config user.name "github-actions[bot]"
 git config user.email "github-actions[bot]@users.noreply.github.com"
+
+# Clean up any existing local branch from previous failed runs
+git branch -D "release/v$NEXT_VERSION" 2>/dev/null || true
+
 git checkout -b "release/v$NEXT_VERSION"
 
 # Update manifest version

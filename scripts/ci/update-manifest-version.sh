@@ -44,8 +44,15 @@ if ! command -v jq &>/dev/null; then
 	exit 1
 fi
 
+if [[ ! -f "manifest.json" ]]; then
+	echo "Error: manifest.json not found" >&2
+	exit 1
+fi
+
 # Update manifest.json
 TEMP_FILE=$(mktemp)
+trap 'rm -f "$TEMP_FILE"' EXIT
+
 jq --arg version "$NEW_VERSION" --arg date "$TODAY" \
 	'.version = $version | .lastUpdated = $date' \
 	manifest.json >"$TEMP_FILE"

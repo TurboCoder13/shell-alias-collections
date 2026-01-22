@@ -29,45 +29,42 @@ fi
 
 errors=0
 
+# Helper function to validate JSON files matching a glob pattern
+validate_glob() {
+	local label="$1"
+	local pattern="$2"
+
+	echo ""
+	echo "Validating ${label} collections..."
+	if compgen -G "$pattern" >/dev/null 2>&1; then
+		for file in $pattern; do
+			if [[ -f "$file" ]]; then
+				if python3 -m json.tool "$file" >/dev/null 2>&1; then
+					echo "  ✓ $file"
+				else
+					echo "  ✗ $file is invalid JSON" >&2
+					errors=$((errors + 1))
+				fi
+			fi
+		done
+	else
+		echo "  (no ${label} collections found)"
+	fi
+}
+
 echo "Validating manifest.json..."
-if python3 -m json.tool manifest.json >/dev/null 2>&1; then
+if [[ ! -r "manifest.json" ]]; then
+	echo "  ✗ manifest.json is missing or unreadable" >&2
+	errors=$((errors + 1))
+elif python3 -m json.tool manifest.json >/dev/null 2>&1; then
 	echo "  ✓ manifest.json is valid JSON"
 else
 	echo "  ✗ manifest.json is invalid JSON" >&2
 	errors=$((errors + 1))
 fi
 
-echo ""
-echo "Validating curated collections..."
-if compgen -G "collections/curated/*.json" >/dev/null 2>&1; then
-	for file in collections/curated/*.json; do
-		if python3 -m json.tool "$file" >/dev/null 2>&1; then
-			echo "  ✓ $file"
-		else
-			echo "  ✗ $file is invalid JSON" >&2
-			errors=$((errors + 1))
-		fi
-	done
-else
-	echo "  (no curated collections found)"
-fi
-
-echo ""
-echo "Validating community collections..."
-if compgen -G "collections/community/*.json" >/dev/null 2>&1; then
-	for file in collections/community/*.json; do
-		if [[ -f "$file" ]]; then
-			if python3 -m json.tool "$file" >/dev/null 2>&1; then
-				echo "  ✓ $file"
-			else
-				echo "  ✗ $file is invalid JSON" >&2
-				errors=$((errors + 1))
-			fi
-		fi
-	done
-else
-	echo "  (no community collections found)"
-fi
+validate_glob "curated" "collections/curated/*.json"
+validate_glob "community" "collections/community/*.json"
 
 echo ""
 if [[ $errors -eq 0 ]]; then

@@ -75,21 +75,27 @@ HAS_BREAKING=false
 HAS_FEAT=false
 HAS_FIX=false
 
+# Regex patterns for commit analysis (variables avoid shellcheck parsing issues)
+BREAKING_BANG_REGEX='^[a-z]+(\([^)]+\))?!:'
+BREAKING_CHANGE_REGEX='BREAKING[[:space:]]CHANGE'
+FEAT_REGEX='^feat(\([^)]+\))?:'
+PATCH_REGEX='^(fix|perf|refactor|docs|style|test|chore|ci)(\([^)]+\))?:'
+
 while IFS= read -r commit_msg; do
 	[[ -z "$commit_msg" ]] && continue
 
 	# Check for breaking changes
-	if [[ "$commit_msg" =~ ^[a-z]+(\([^)]+\))?!: ]] || [[ "$commit_msg" =~ BREAKING[[:space:]]CHANGE ]]; then
+	if [[ "$commit_msg" =~ $BREAKING_BANG_REGEX ]] || [[ "$commit_msg" =~ $BREAKING_CHANGE_REGEX ]]; then
 		HAS_BREAKING=true
 	fi
 
 	# Check for features
-	if [[ "$commit_msg" =~ ^feat(\([^)]+\))?: ]]; then
+	if [[ "$commit_msg" =~ $FEAT_REGEX ]]; then
 		HAS_FEAT=true
 	fi
 
 	# Check for fixes and other patch-level changes
-	if [[ "$commit_msg" =~ ^(fix|perf|refactor|docs|style|test|chore|ci)(\([^)]+\))?: ]]; then
+	if [[ "$commit_msg" =~ $PATCH_REGEX ]]; then
 		HAS_FIX=true
 	fi
 done < <(git log --format="%s" "$COMMIT_RANGE" 2>/dev/null || true)

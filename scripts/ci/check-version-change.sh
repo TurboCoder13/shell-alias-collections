@@ -36,12 +36,14 @@ if ! command -v jq &>/dev/null; then
 fi
 
 # Get current version
-CURRENT_VERSION=$(jq -r '.version' manifest.json)
-echo "Current version: $CURRENT_VERSION"
+CURRENT_VERSION=$(jq -r '.version' manifest.json 2>/dev/null || echo "")
 
-# Get previous version from HEAD~1
-PREVIOUS_VERSION=$(git show HEAD~1:manifest.json 2>/dev/null | jq -r '.version' 2>/dev/null || echo "")
-echo "Previous version: ${PREVIOUS_VERSION:-"(none)"}"
+# Fail early if current version is empty
+if [[ -z "$CURRENT_VERSION" || "$CURRENT_VERSION" == "null" ]]; then
+	echo "Error: Could not read version from manifest.json" >&2
+	exit 1
+fi
+echo "Current version: $CURRENT_VERSION"
 
 # Check if tag already exists
 TAG_NAME="v${CURRENT_VERSION}"
@@ -49,8 +51,16 @@ if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
 	echo "Tag $TAG_NAME already exists"
 	CHANGED="false"
 else
+	# Get previous version from HEAD~1
+	PREVIOUS_VERSION=$(git show HEAD~1:manifest.json 2>/dev/null | jq -r '.version' 2>/dev/null || echo "")
+	echo "Previous version: ${PREVIOUS_VERSION:-"(none)"}"
+
 	# Determine if version changed
-	if [[ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" && -n "$PREVIOUS_VERSION" ]]; then
+	if [[ -z "$PREVIOUS_VERSION" ]]; then
+		# No previous version (first release)
+		CHANGED="true"
+		echo "First release detected: $CURRENT_VERSION"
+	elif [[ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]]; then
 		CHANGED="true"
 		echo "Version changed: $PREVIOUS_VERSION -> $CURRENT_VERSION"
 	else
@@ -69,3 +79,4 @@ if [[ -n "${GITHUB_OUTPUT:-}" ]]; then
 fi
 
 echo "changed=$CHANGED"
+exit 0

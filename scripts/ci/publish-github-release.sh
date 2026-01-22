@@ -69,12 +69,17 @@ echo "Generating checksums..."
 (cd dist && sha256sum *.tar.gz *.zip >SHA256SUMS.txt)
 cat dist/SHA256SUMS.txt
 
-# Create GitHub release
+# Create GitHub release (handle idempotency)
 echo "Creating GitHub release..."
-gh release create "$TAG" \
-	--title "Release $TAG" \
-	--generate-notes \
-	dist/*
+if gh release view "$TAG" &>/dev/null; then
+	echo "Release $TAG already exists, uploading assets..."
+	gh release upload "$TAG" dist/* --clobber
+else
+	gh release create "$TAG" \
+		--title "Release $TAG" \
+		--generate-notes \
+		dist/*
+fi
 
 echo "Published release $TAG"
 

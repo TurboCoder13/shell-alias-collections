@@ -34,6 +34,10 @@ MANUAL_VERSION=""
 while [[ $# -gt 0 ]]; do
 	case "$1" in
 	--version)
+		if [[ -z "${2:-}" || "$2" == --* ]]; then
+			echo "Error: --version requires a non-empty value" >&2
+			exit 1
+		fi
 		MANUAL_VERSION="$2"
 		shift 2
 		;;
@@ -47,7 +51,6 @@ done
 # Determine version and whether to proceed
 if [[ -n "$MANUAL_VERSION" ]]; then
 	VERSION="$MANUAL_VERSION"
-	CHANGED="true"
 	echo "Manual version override: $VERSION"
 else
 	# Check if this is a release commit
@@ -56,16 +59,19 @@ else
 		exit 0
 	fi
 
-	# Check version change
-	"$SCRIPT_DIR/check-version-change.sh"
+	# Get version from manifest
 	VERSION=$(jq -r '.version' manifest.json)
+	if [[ -z "$VERSION" || "$VERSION" == "null" ]]; then
+		echo "Error: Could not read version from manifest.json" >&2
+		exit 1
+	fi
+
 	PREVIOUS=$(git show HEAD~1:manifest.json 2>/dev/null | jq -r '.version' 2>/dev/null || echo "")
 
-	if [[ "$VERSION" == "$PREVIOUS" ]]; then
+	if [[ -n "$PREVIOUS" && "$VERSION" == "$PREVIOUS" ]]; then
 		echo "Version unchanged, skipping"
 		exit 0
 	fi
-	CHANGED="true"
 fi
 
 TAG_NAME="v$VERSION"

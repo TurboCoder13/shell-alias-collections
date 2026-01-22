@@ -39,6 +39,11 @@ if [[ -z "${PR_NUMBER:-}" ]]; then
 	exit 1
 fi
 
+if [[ -z "${GITHUB_REPOSITORY:-}" ]]; then
+	echo "Error: GITHUB_REPOSITORY environment variable is required" >&2
+	exit 1
+fi
+
 OUTPUT_FILE="lintro-output.txt"
 COMMENT_MARKER="<!-- lintro-report -->"
 
