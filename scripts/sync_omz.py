@@ -14,7 +14,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
+import sys
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -350,10 +352,20 @@ def get_omz_latest_commit() -> str | None:
     """Get the latest commit SHA from Oh My Zsh master branch."""
     try:
         url = "https://api.github.com/repos/ohmyzsh/ohmyzsh/commits/master"
+        headers: dict[str, str] = {
+            "User-Agent": "shell-alias-collections/sync_omz.py",
+            "Accept": "application/vnd.github.v3+json",
+        }
+        # Use GitHub token if available (prefer OMZ_GITHUB_TOKEN over GITHUB_TOKEN)
+        token = os.environ.get("OMZ_GITHUB_TOKEN") or os.environ.get("GITHUB_TOKEN")
+        if token:
+            headers["Authorization"] = f"token {token}"
+
+        request = urllib.request.Request(url, headers=headers)
         # URL is hardcoded to trusted GitHub API, not user-controlled
         # nosec B310
         # nosemgrep: python.lang.security.audit.dynamic-urllib-use-detected.dynamic-urllib-use-detected
-        with urllib.request.urlopen(url, timeout=10) as response:  # noqa: S310 - same as above
+        with urllib.request.urlopen(request, timeout=10) as response:  # noqa: S310 - same as above
             content: bytes = response.read()
             data: dict[str, Any] = json.loads(content.decode("utf-8"))
             sha: str = data.get("sha", "")
@@ -483,7 +495,7 @@ def main() -> None:
         if not plugins_to_sync:
             print(f"Error: Unknown plugin '{args.plugin}'")
             print(f"Available plugins: {', '.join(p.plugin_id for p in PLUGINS)}")
-            return
+            sys.exit(1)
 
     # Sync plugins
     synced: list[str] = []
