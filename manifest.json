@@ -6,6 +6,7 @@
       "id": "git-essentials",
       "name": "Git Essentials",
       "description": "Common git shortcuts for everyday use",
+      "icon": "git",
       "category": "Development",
       "tags": ["git", "version-control"],
       "source": {
@@ -17,6 +18,7 @@
       "id": "navigation",
       "name": "Navigation",
       "description": "Directory navigation and listing shortcuts",
+      "icon": "gnubash",
       "category": "Utilities",
       "tags": ["cd", "ls", "navigation", "directory"],
       "source": {
@@ -28,6 +30,7 @@
       "id": "safety",
       "name": "Safety",
       "description": "Safer defaults for destructive commands",
+      "icon": "gnubash",
       "category": "System",
       "tags": ["rm", "cp", "mv", "safety"],
       "source": {
@@ -39,6 +42,7 @@
       "id": "file-operations",
       "name": "File Operations",
       "description": "File manipulation and management shortcuts",
+      "icon": "gnubash",
       "category": "Utilities",
       "tags": ["files", "grep", "find", "disk"],
       "source": {
@@ -50,6 +54,7 @@
       "id": "system-admin",
       "name": "System Admin",
       "description": "System administration and process management",
+      "icon": "gnubash",
       "category": "System",
       "tags": ["process", "memory", "network", "admin"],
       "source": {
@@ -61,6 +66,7 @@
       "id": "network",
       "name": "Network",
       "description": "Network diagnostics and utilities",
+      "icon": "gnubash",
       "category": "System",
       "tags": ["network", "ip", "dns", "ping"],
       "source": {
@@ -72,6 +78,7 @@
       "id": "git",
       "name": "Git (OMZ)",
       "description": "Git aliases from Oh My Zsh",
+      "icon": "git",
       "category": "Development",
       "tags": ["git", "version-control"],
       "source": {
@@ -83,6 +90,7 @@
       "id": "npm",
       "name": "NPM",
       "description": "NPM package manager aliases",
+      "icon": "npm",
       "category": "Development",
       "tags": ["npm", "node", "javascript"],
       "source": {
@@ -94,6 +102,7 @@
       "id": "yarn",
       "name": "Yarn",
       "description": "Yarn package manager aliases",
+      "icon": "yarn",
       "category": "Development",
       "tags": ["yarn", "node", "javascript"],
       "source": {
@@ -105,6 +114,7 @@
       "id": "python",
       "name": "Python",
       "description": "Python development aliases",
+      "icon": "python",
       "category": "Development",
       "tags": ["python", "py"],
       "source": {
@@ -116,6 +126,7 @@
       "id": "pip",
       "name": "Pip",
       "description": "Python pip package manager aliases",
+      "icon": "pypi",
       "category": "Development",
       "tags": ["pip", "python", "packages"],
       "source": {
@@ -127,6 +138,7 @@
       "id": "golang",
       "name": "Go",
       "description": "Go language development aliases",
+      "icon": "go",
       "category": "Development",
       "tags": ["go", "golang"],
       "source": {
@@ -138,6 +150,7 @@
       "id": "rails",
       "name": "Rails",
       "description": "Ruby on Rails development aliases",
+      "icon": "rubyonrails",
       "category": "Development",
       "tags": ["rails", "ruby"],
       "source": {
@@ -149,6 +162,7 @@
       "id": "bundler",
       "name": "Bundler",
       "description": "Ruby Bundler aliases",
+      "icon": "rubygems",
       "category": "Development",
       "tags": ["bundler", "ruby", "gems"],
       "source": {
@@ -160,6 +174,7 @@
       "id": "docker",
       "name": "Docker",
       "description": "Docker container aliases",
+      "icon": "docker",
       "category": "DevOps",
       "tags": ["docker", "containers"],
       "source": {
@@ -171,6 +186,7 @@
       "id": "docker-compose",
       "name": "Docker Compose",
       "description": "Docker Compose orchestration aliases",
+      "icon": "docker",
       "category": "DevOps",
       "tags": ["docker", "compose", "containers"],
       "source": {
@@ -182,6 +198,7 @@
       "id": "kubectl",
       "name": "Kubernetes",
       "description": "Kubernetes kubectl aliases",
+      "icon": "kubernetes",
       "category": "DevOps",
       "tags": ["kubernetes", "k8s", "kubectl"],
       "source": {
@@ -193,6 +210,7 @@
       "id": "terraform",
       "name": "Terraform",
       "description": "Terraform infrastructure as code aliases",
+      "icon": "terraform",
       "category": "DevOps",
       "tags": ["terraform", "infrastructure"],
       "source": {
@@ -204,6 +222,7 @@
       "id": "brew",
       "name": "Homebrew",
       "description": "Homebrew package manager aliases",
+      "icon": "homebrew",
       "category": "System",
       "tags": ["brew", "homebrew", "macos"],
       "source": {
@@ -215,6 +234,7 @@
       "id": "macos",
       "name": "macOS",
       "description": "macOS-specific aliases",
+      "icon": "macos",
       "category": "System",
       "tags": ["macos", "osx", "apple"],
       "source": {
@@ -226,6 +246,7 @@
       "id": "systemd",
       "name": "Systemd",
       "description": "Linux systemd service management aliases",
+      "icon": "linux",
       "category": "System",
       "tags": ["systemd", "linux", "services"],
       "source": {
@@ -237,6 +258,7 @@
       "id": "ubuntu",
       "name": "Ubuntu",
       "description": "Ubuntu Linux aliases",
+      "icon": "ubuntu",
       "category": "System",
       "tags": ["ubuntu", "linux", "apt"],
       "source": {
@@ -248,6 +270,7 @@
       "id": "common-aliases",
       "name": "Common Shell",
       "description": "Common shell aliases for everyday use",
+      "icon": "gnubash",
       "category": "Utilities",
       "tags": ["common", "shell", "general"],
       "source": {
@@ -259,6 +282,7 @@
       "id": "rsync",
       "name": "Rsync",
       "description": "Rsync file synchronization aliases",
+      "icon": "linux",
       "category": "Utilities",
       "tags": ["rsync", "sync", "backup"],
       "source": {
@@ -270,6 +294,7 @@
       "id": "tmux",
       "name": "Tmux",
       "description": "Tmux terminal multiplexer aliases",
+      "icon": "tmux",
       "category": "Utilities",
       "tags": ["tmux", "terminal"],
       "source": {
