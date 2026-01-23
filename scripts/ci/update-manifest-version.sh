@@ -39,25 +39,29 @@ if ! [[ "$NEW_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 	exit 1
 fi
 
-if ! command -v jq &>/dev/null; then
-	echo "Error: jq is required but not installed" >&2
-	exit 1
-fi
-
 if [[ ! -f "manifest.json" ]]; then
 	echo "Error: manifest.json not found" >&2
 	exit 1
 fi
 
-# Update manifest.json
-TEMP_FILE=$(mktemp)
-trap 'rm -f "$TEMP_FILE"' EXIT
+# Update manifest.json using sed to preserve formatting
+# This avoids jq's default multi-line array output that conflicts with prettier
+# Patterns allow flexible whitespace around colons and values
+sed -i.bak -E \
+	-e "s/\"version\"[[:space:]]*:[[:space:]]*\"[0-9]+\.[0-9]+\.[0-9]+\"/\"version\": \"$NEW_VERSION\"/" \
+	-e "s/\"lastUpdated\"[[:space:]]*:[[:space:]]*\"[0-9]{4}-[0-9]{2}-[0-9]{2}\"/\"lastUpdated\": \"$TODAY\"/" \
+	manifest.json
+rm -f manifest.json.bak
 
-jq --arg version "$NEW_VERSION" --arg date "$TODAY" \
-	'.version = $version | .lastUpdated = $date' \
-	manifest.json >"$TEMP_FILE"
-
-mv "$TEMP_FILE" manifest.json
+# Validate that updates were applied
+if ! grep -q "\"version\": \"$NEW_VERSION\"" manifest.json; then
+	echo "Error: Failed to update version in manifest.json" >&2
+	exit 1
+fi
+if ! grep -q "\"lastUpdated\": \"$TODAY\"" manifest.json; then
+	echo "Error: Failed to update lastUpdated in manifest.json" >&2
+	exit 1
+fi
 
 echo "Updated manifest.json:"
 echo "  version: $NEW_VERSION"
