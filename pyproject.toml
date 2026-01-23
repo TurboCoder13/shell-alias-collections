@@ -11,6 +11,23 @@ dev = ["lintro>=0.35.0"]
 # Lintro configuration for shell-alias-collections
 # See: https://github.com/TurboCoder13/py-lintro
 
+# Disable Python-specific tools (not needed for this project)
+[tool.lintro.tools.black]
+enabled = false
+
+[tool.lintro.tools.ruff]
+enabled = false
+
+[tool.lintro.tools.mypy]
+enabled = false
+
+[tool.lintro.tools.bandit]
+enabled = false
+
+[tool.lintro.tools.darglint]
+enabled = false
+
+# Enable shell linting
 [tool.lintro.tools.shellcheck]
 enabled = true
 paths = ["scripts/"]
@@ -23,17 +40,30 @@ indent = 0
 binary_next_line = true
 case_indent = true
 
+# Enable YAML linting
 [tool.lintro.tools.yamllint]
 enabled = true
 paths = [".github/"]
 
+# Enable Markdown linting
 [tool.lintro.tools.markdownlint]
 enabled = true
 paths = ["*.md", ".github/", "scripts/"]
 
+# Enable Prettier for formatting
 [tool.lintro.tools.prettier]
 enabled = true
 paths = ["*.json", "collections/", "*.md"]
+
+# Enable Biome for additional checks
+[tool.lintro.tools.biome]
+enabled = true
+paths = ["*.json", "collections/"]
+
+# Enable actionlint for GitHub Actions
+[tool.lintro.tools.actionlint]
+enabled = true
+paths = [".github/workflows/"]
 
 [tool.yamllint]
 extends = "default"
@@ -42,3 +72,20 @@ extends = "default"
 line-length = { max = 120 }
 truthy = { check-keys = false }
 document-start = "disable"
+
+[tool.bandit]
+skips = ["B310"] # urllib usage with hardcoded trusted URLs
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = false
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]             # Line length handled by formatter

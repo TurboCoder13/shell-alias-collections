@@ -1,0 +1,312 @@
+{
+  "id": "rails",
+  "name": "Rails",
+  "description": "Ruby on Rails development aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rails",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "rails",
+      "value": "_rails_command"
+    },
+    {
+      "name": "rake",
+      "value": "_rake_command"
+    },
+    {
+      "name": "devlog",
+      "value": "tail -f log/development.log",
+      "description": "Log aliases"
+    },
+    {
+      "name": "prodlog",
+      "value": "tail -f log/production.log"
+    },
+    {
+      "name": "testlog",
+      "value": "tail -f log/test.log"
+    },
+    {
+      "name": "RED",
+      "value": "RAILS_ENV=development",
+      "description": "Environment settings",
+      "global": true
+    },
+    {
+      "name": "REP",
+      "value": "RAILS_ENV=production",
+      "global": true
+    },
+    {
+      "name": "RET",
+      "value": "RAILS_ENV=test",
+      "global": true
+    },
+    {
+      "name": "rc",
+      "value": "rails console",
+      "description": "Rails aliases"
+    },
+    {
+      "name": "rcs",
+      "value": "rails console --sandbox"
+    },
+    {
+      "name": "rd",
+      "value": "rails destroy"
+    },
+    {
+      "name": "rdb",
+      "value": "rails dbconsole"
+    },
+    {
+      "name": "rdc",
+      "value": "rails db:create"
+    },
+    {
+      "name": "rdd",
+      "value": "rails db:drop"
+    },
+    {
+      "name": "rdm",
+      "value": "rails db:migrate"
+    },
+    {
+      "name": "rdmd",
+      "value": "rails db:migrate:down"
+    },
+    {
+      "name": "rdmr",
+      "value": "rails db:migrate:redo"
+    },
+    {
+      "name": "rdms",
+      "value": "rails db:migrate:status"
+    },
+    {
+      "name": "rdmtc",
+      "value": "rails db:migrate db:test:clone"
+    },
+    {
+      "name": "rdmu",
+      "value": "rails db:migrate:up"
+    },
+    {
+      "name": "rdr",
+      "value": "rails db:rollback"
+    },
+    {
+      "name": "rdrs",
+      "value": "rails db:reset"
+    },
+    {
+      "name": "rds",
+      "value": "rails db:seed"
+    },
+    {
+      "name": "rdsl",
+      "value": "rails db:schema:load"
+    },
+    {
+      "name": "rdtc",
+      "value": "rails db:test:clone"
+    },
+    {
+      "name": "rdtp",
+      "value": "rails db:test:prepare"
+    },
+    {
+      "name": "rgen",
+      "value": "rails generate"
+    },
+    {
+      "name": "rgm",
+      "value": "rails generate migration"
+    },
+    {
+      "name": "rlc",
+      "value": "rails log:clear"
+    },
+    {
+      "name": "rmd",
+      "value": "rails middleware"
+    },
+    {
+      "name": "rn",
+      "value": "rails notes"
+    },
+    {
+      "name": "rp",
+      "value": "rails plugin"
+    },
+    {
+      "name": "rr",
+      "value": "rails routes"
+    },
+    {
+      "name": "rrc",
+      "value": "rails routes --controller"
+    },
+    {
+      "name": "rre",
+      "value": "rails routes --expanded"
+    },
+    {
+      "name": "rrg",
+      "value": "rails routes --grep"
+    },
+    {
+      "name": "rru",
+      "value": "rails routes --unused"
+    },
+    {
+      "name": "rs",
+      "value": "rails server"
+    },
+    {
+      "name": "rsb",
+      "value": "rails server --bind"
+    },
+    {
+      "name": "rsd",
+      "value": "rails server --debugger"
+    },
+    {
+      "name": "rsp",
+      "value": "rails server --port"
+    },
+    {
+      "name": "rsts",
+      "value": "rails stats"
+    },
+    {
+      "name": "rt",
+      "value": "rails test"
+    },
+    {
+      "name": "rta",
+      "value": "rails test:all"
+    },
+    {
+      "name": "ru",
+      "value": "rails runner"
+    },
+    {
+      "name": "fmns",
+      "value": "foreman start",
+      "description": "Foreman aliases"
+    },
+    {
+      "name": "rkdc",
+      "value": "rake db:create",
+      "description": "Rake aliases"
+    },
+    {
+      "name": "rkdd",
+      "value": "rake db:drop"
+    },
+    {
+      "name": "rkdm",
+      "value": "rake db:migrate"
+    },
+    {
+      "name": "rkdmd",
+      "value": "rake db:migrate:down"
+    },
+    {
+      "name": "rkdmr",
+      "value": "rake db:migrate:redo"
+    },
+    {
+      "name": "rkdms",
+      "value": "rake db:migrate:status"
+    },
+    {
+      "name": "rkdmtc",
+      "value": "rake db:migrate db:test:clone"
+    },
+    {
+      "name": "rkdmu",
+      "value": "rake db:migrate:up"
+    },
+    {
+      "name": "rkdr",
+      "value": "rake db:rollback"
+    },
+    {
+      "name": "rkdrs",
+      "value": "rake db:reset"
+    },
+    {
+      "name": "rkds",
+      "value": "rake db:seed"
+    },
+    {
+      "name": "rkdsl",
+      "value": "rake db:schema:load"
+    },
+    {
+      "name": "rkdtc",
+      "value": "rake db:test:clone"
+    },
+    {
+      "name": "rkdtp",
+      "value": "rake db:test:prepare"
+    },
+    {
+      "name": "rklc",
+      "value": "rake log:clear"
+    },
+    {
+      "name": "rkmd",
+      "value": "rake middleware"
+    },
+    {
+      "name": "rkn",
+      "value": "rake notes"
+    },
+    {
+      "name": "rksts",
+      "value": "rake stats"
+    },
+    {
+      "name": "rkt",
+      "value": "rake test"
+    },
+    {
+      "name": "sc",
+      "value": "ruby script/console",
+      "description": "legacy stuff"
+    },
+    {
+      "name": "sd",
+      "value": "ruby script/destroy"
+    },
+    {
+      "name": "sg",
+      "value": "ruby script/generate"
+    },
+    {
+      "name": "sp",
+      "value": "ruby script/plugin"
+    },
+    {
+      "name": "sr",
+      "value": "ruby script/runner"
+    },
+    {
+      "name": "ssp",
+      "value": "ruby script/spec"
+    },
+    {
+      "name": "sstat",
+      "value": "thin --stats \"/thin/stats\" start"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "id": "golang",
+  "name": "Go",
+  "description": "Go language development aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/golang",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "gob",
+      "value": "go build"
+    },
+    {
+      "name": "goc",
+      "value": "go clean"
+    },
+    {
+      "name": "god",
+      "value": "go doc"
+    },
+    {
+      "name": "goe",
+      "value": "go env"
+    },
+    {
+      "name": "gof",
+      "value": "go fmt"
+    },
+    {
+      "name": "gofa",
+      "value": "go fmt ./..."
+    },
+    {
+      "name": "gofx",
+      "value": "go fix"
+    },
+    {
+      "name": "gog",
+      "value": "go get"
+    },
+    {
+      "name": "goga",
+      "value": "go get ./..."
+    },
+    {
+      "name": "goi",
+      "value": "go install"
+    },
+    {
+      "name": "gol",
+      "value": "go list"
+    },
+    {
+      "name": "gom",
+      "value": "go mod"
+    },
+    {
+      "name": "gomt",
+      "value": "go mod tidy"
+    },
+    {
+      "name": "gopa",
+      "value": "cd $GOPATH"
+    },
+    {
+      "name": "gopb",
+      "value": "cd $GOPATH/bin"
+    },
+    {
+      "name": "gops",
+      "value": "cd $GOPATH/src"
+    },
+    {
+      "name": "gor",
+      "value": "go run"
+    },
+    {
+      "name": "got",
+      "value": "go test"
+    },
+    {
+      "name": "gota",
+      "value": "go test ./..."
+    },
+    {
+      "name": "goto",
+      "value": "go tool"
+    },
+    {
+      "name": "gotoc",
+      "value": "go tool compile"
+    },
+    {
+      "name": "gotod",
+      "value": "go tool dist"
+    },
+    {
+      "name": "gotofx",
+      "value": "go tool fix"
+    },
+    {
+      "name": "gov",
+      "value": "go vet"
+    },
+    {
+      "name": "gove",
+      "value": "go version"
+    },
+    {
+      "name": "gow",
+      "value": "go work"
+    }
+  ]
+}

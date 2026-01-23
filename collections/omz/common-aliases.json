@@ -1,0 +1,155 @@
+{
+  "id": "common-aliases",
+  "name": "Common Shell",
+  "description": "Common shell aliases for everyday use",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/common-aliases",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "ldot",
+      "value": "ls -ld .*"
+    },
+    {
+      "name": "lS",
+      "value": "ls -1FSsh"
+    },
+    {
+      "name": "lart",
+      "value": "ls -1Fcart"
+    },
+    {
+      "name": "lrt",
+      "value": "ls -1Fcrt"
+    },
+    {
+      "name": "grep",
+      "value": "grep --color"
+    },
+    {
+      "name": "sgrep",
+      "value": "grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} "
+    },
+    {
+      "name": "t",
+      "value": "tail -f"
+    },
+    {
+      "name": "H",
+      "value": "| head",
+      "description": "Command line head / tail shortcuts",
+      "global": true
+    },
+    {
+      "name": "T",
+      "value": "| tail",
+      "global": true
+    },
+    {
+      "name": "G",
+      "value": "| grep",
+      "global": true
+    },
+    {
+      "name": "L",
+      "value": "| less",
+      "global": true
+    },
+    {
+      "name": "M",
+      "value": "| most",
+      "global": true
+    },
+    {
+      "name": "LL",
+      "value": "2>&1 | less",
+      "global": true
+    },
+    {
+      "name": "CA",
+      "value": "2>&1 | cat -A",
+      "global": true
+    },
+    {
+      "name": "NE",
+      "value": "2> /dev/null",
+      "global": true
+    },
+    {
+      "name": "NUL",
+      "value": "> /dev/null 2>&1",
+      "global": true
+    },
+    {
+      "name": "P",
+      "value": "2>&1| pygmentize -l pytb",
+      "global": true
+    },
+    {
+      "name": "dud",
+      "value": "du -d 1 -h"
+    },
+    {
+      "name": "ff",
+      "value": "find . -type f -name"
+    },
+    {
+      "name": "h",
+      "value": "history"
+    },
+    {
+      "name": "hgrep",
+      "value": "fc -El 0 | grep"
+    },
+    {
+      "name": "help",
+      "value": "man"
+    },
+    {
+      "name": "p",
+      "value": "ps -f"
+    },
+    {
+      "name": "sortnr",
+      "value": "sort -n -r"
+    },
+    {
+      "name": "unexport",
+      "value": "unset"
+    },
+    {
+      "name": "rm",
+      "value": "rm -i"
+    },
+    {
+      "name": "cp",
+      "value": "cp -i"
+    },
+    {
+      "name": "mv",
+      "value": "mv -i"
+    },
+    {
+      "name": "zip",
+      "value": "unzip -l",
+      "description": "list whats inside packed file"
+    },
+    {
+      "name": "rar",
+      "value": "unrar l"
+    },
+    {
+      "name": "tar",
+      "value": "tar tf"
+    },
+    {
+      "name": "ace",
+      "value": "unace l"
+    }
+  ]
+}

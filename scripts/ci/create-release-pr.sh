@@ -76,8 +76,16 @@ git checkout -b "release/v$NEXT_VERSION"
 # Update manifest version
 "$SCRIPT_DIR/update-manifest-version.sh" "$NEXT_VERSION"
 
-# Commit and push
+# Format code to ensure consistency (uses Docker lintro image)
+LINTRO_IMAGE="ghcr.io/turbocoder13/py-lintro:latest"
+echo "Running lintro format to ensure code consistency..."
+if ! docker run --rm --pull=never -v "$PWD:/code" -w /code "$LINTRO_IMAGE" lintro format .; then
+	echo "Warning: lintro format failed (exit code $?), continuing anyway"
+fi
+
+# Commit and push (include any files formatted by lintro)
 git add manifest.json
+git add -u # Stage any modified tracked files (from formatting)
 git commit -m "chore(release): prepare v$NEXT_VERSION"
 git push -u origin "release/v$NEXT_VERSION"
 

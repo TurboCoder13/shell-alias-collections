@@ -1,0 +1,159 @@
+{
+  "id": "docker",
+  "name": "Docker",
+  "description": "Docker container aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "dbl",
+      "value": "docker build"
+    },
+    {
+      "name": "dcin",
+      "value": "docker container inspect"
+    },
+    {
+      "name": "dcls",
+      "value": "docker container ls"
+    },
+    {
+      "name": "dclsa",
+      "value": "docker container ls -a"
+    },
+    {
+      "name": "dib",
+      "value": "docker image build"
+    },
+    {
+      "name": "dii",
+      "value": "docker image inspect"
+    },
+    {
+      "name": "dils",
+      "value": "docker image ls"
+    },
+    {
+      "name": "dipu",
+      "value": "docker image push"
+    },
+    {
+      "name": "dipru",
+      "value": "docker image prune -a"
+    },
+    {
+      "name": "dirm",
+      "value": "docker image rm"
+    },
+    {
+      "name": "dit",
+      "value": "docker image tag"
+    },
+    {
+      "name": "dlo",
+      "value": "docker container logs"
+    },
+    {
+      "name": "dnc",
+      "value": "docker network create"
+    },
+    {
+      "name": "dncn",
+      "value": "docker network connect"
+    },
+    {
+      "name": "dndcn",
+      "value": "docker network disconnect"
+    },
+    {
+      "name": "dni",
+      "value": "docker network inspect"
+    },
+    {
+      "name": "dnls",
+      "value": "docker network ls"
+    },
+    {
+      "name": "dnrm",
+      "value": "docker network rm"
+    },
+    {
+      "name": "dpo",
+      "value": "docker container port"
+    },
+    {
+      "name": "dps",
+      "value": "docker ps"
+    },
+    {
+      "name": "dpsa",
+      "value": "docker ps -a"
+    },
+    {
+      "name": "dpu",
+      "value": "docker pull"
+    },
+    {
+      "name": "dr",
+      "value": "docker container run"
+    },
+    {
+      "name": "drit",
+      "value": "docker container run -it"
+    },
+    {
+      "name": "drm",
+      "value": "docker container rm"
+    },
+    {
+      "name": "dst",
+      "value": "docker container start"
+    },
+    {
+      "name": "drs",
+      "value": "docker container restart"
+    },
+    {
+      "name": "dsta",
+      "value": "docker stop $(docker ps -q)"
+    },
+    {
+      "name": "dstp",
+      "value": "docker container stop"
+    },
+    {
+      "name": "dsts",
+      "value": "docker stats"
+    },
+    {
+      "name": "dtop",
+      "value": "docker top"
+    },
+    {
+      "name": "dvi",
+      "value": "docker volume inspect"
+    },
+    {
+      "name": "dvls",
+      "value": "docker volume ls"
+    },
+    {
+      "name": "dvprune",
+      "value": "docker volume prune"
+    },
+    {
+      "name": "dxc",
+      "value": "docker container exec"
+    },
+    {
+      "name": "dxcit",
+      "value": "docker container exec -it"
+    }
+  ]
+}

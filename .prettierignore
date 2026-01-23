@@ -1,0 +1,22 @@
+# Prettier ignore file for shell-alias-collections
+
+# Build artifacts and caches
+.lintro/
+.venv/
+__pycache__/
+node_modules/
+dist/
+build/
+
+# Lock files
+uv.lock
+bun.lockb
+package-lock.json
+yarn.lock
+
+# Generated files
+*.min.js
+*.min.css
+
+# Git
+.git/

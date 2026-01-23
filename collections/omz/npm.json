@@ -1,0 +1,110 @@
+{
+  "id": "npm",
+  "name": "NPM",
+  "description": "NPM package manager aliases",
+  "version": "1.0.0",
+  "syncedAt": "2026-01-22",
+  "attribution": {
+    "source": "Oh My Zsh",
+    "sourceUrl": "https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm",
+    "license": "MIT",
+    "omzCommit": "e076690"
+  },
+  "aliases": [
+    {
+      "name": "npmg",
+      "value": "npm i -g ",
+      "description": "Install dependencies globally"
+    },
+    {
+      "name": "npmS",
+      "value": "npm i -S ",
+      "description": "npms is used by https://www.npmjs.com/package/npms"
+    },
+    {
+      "name": "npmD",
+      "value": "npm i -D ",
+      "description": "npmd is used by https://github.com/dominictarr/npmd"
+    },
+    {
+      "name": "npmF",
+      "value": "npm i -f",
+      "description": "Force npm to fetch remote resources even if a local copy exists on disk."
+    },
+    {
+      "name": "npmE",
+      "value": "PATH=\"$(npm bin)\":\"$PATH\"",
+      "description": "i.e npmE gulp"
+    },
+    {
+      "name": "npmO",
+      "value": "npm outdated",
+      "description": "Check which npm modules are outdated"
+    },
+    {
+      "name": "npmU",
+      "value": "npm update",
+      "description": "Update all the packages listed to the latest version"
+    },
+    {
+      "name": "npmV",
+      "value": "npm -v",
+      "description": "Check package versions"
+    },
+    {
+      "name": "npmL",
+      "value": "npm list",
+      "description": "List packages"
+    },
+    {
+      "name": "npmL0",
+      "value": "npm ls --depth=0",
+      "description": "List top-level installed packages"
+    },
+    {
+      "name": "npmst",
+      "value": "npm start",
+      "description": "Run npm start"
+    },
+    {
+      "name": "npmt",
+      "value": "npm test",
+      "description": "Run npm test"
+    },
+    {
+      "name": "npmR",
+      "value": "npm run",
+      "description": "Run npm scripts"
+    },
+    {
+      "name": "npmP",
+      "value": "npm publish",
+      "description": "Run npm publish"
+    },
+    {
+      "name": "npmI",
+      "value": "npm init",
+      "description": "Run npm init"
+    },
+    {
+      "name": "npmi",
+      "value": "npm info",
+      "description": "Run npm info"
+    },
+    {
+      "name": "npmSe",
+      "value": "npm search",
+      "description": "Run npm search"
+    },
+    {
+      "name": "npmrd",
+      "value": "npm run dev",
+      "description": "Run npm run dev"
+    },
+    {
+      "name": "npmrb",
+      "value": "npm run build",
+      "description": "Run npm run build"
+    }
+  ]
+}

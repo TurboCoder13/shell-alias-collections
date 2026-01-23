@@ -1,0 +1,7 @@
+[darglint]
+# Darglint configuration
+# Disable strictness for scripts that don't need full documentation
+docstring_style = google
+strictness = short
+ignore_regex = ^_
+ignore = DAR101,DAR201,DAR301,DAR401,DAR402

@@ -1,7 +1,16 @@
 # Ignore build artifacts and generated files from linting
 
-.lintro/*
+.lintro/
 .venv/
 __pycache__/
 node_modules/
 dist/
+build/
+.git/
+*.egg-info/
+
+# Lock files
+uv.lock
+bun.lockb
+package-lock.json
+yarn.lock
