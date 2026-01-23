@@ -79,7 +79,7 @@ git checkout -b "release/v$NEXT_VERSION"
 # Format code to ensure consistency (uses Docker lintro image)
 LINTRO_IMAGE="ghcr.io/turbocoder13/py-lintro:latest"
 echo "Running lintro format to ensure code consistency..."
-if ! docker run --rm --pull=never -v "$PWD:/code" -w /code "$LINTRO_IMAGE" lintro format .; then
+if ! docker run --rm -v "$PWD:/code" -w /code "$LINTRO_IMAGE" lintro format .; then
 	echo "Warning: lintro format failed (exit code $?), continuing anyway"
 fi
 
