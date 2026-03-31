@@ -28,6 +28,7 @@ jobs:
           allowed-endpoints: >
             github.com:443
             api.github.com:443
+            codeload.github.com:443
             objects.githubusercontent.com:443
             fulcio.sigstore.dev:443
             rekor.sigstore.dev:443
@@ -35,6 +36,9 @@ jobs:
             ossf.github.io:443
             www.bestpractices.dev:443
             api.osv.dev:443
+            api.deps.dev:443
+            api.scorecard.dev:443
+            oss-fuzz-build-logs.storage.googleapis.com:443
 
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
