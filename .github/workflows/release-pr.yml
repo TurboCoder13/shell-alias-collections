@@ -25,6 +25,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Harden Runner
+        # yamllint disable-line rule:line-length
         uses: step-security/harden-runner@fa2e9d605c4eeb9fcad4c99c224cee0c6c7f3594 # v2.16.0
         with:
           egress-policy: block
@@ -36,6 +37,7 @@ jobs:
             pkg-containers.githubusercontent.com:443
 
       - name: Checkout
+        # yamllint disable-line rule:line-length
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
@@ -43,14 +45,49 @@ jobs:
           token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Log in to GitHub Container Registry
+        # yamllint disable-line rule:line-length
         uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2 # v4.0.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create release PR
+      - name: Compute version and update manifest
+        id: version
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MAX_BUMP: minor
         run: ./scripts/ci/create-release-pr.sh
+
+      - name: Create Release PR
+        if: steps.version.outputs.bump_needed == 'true'
+        # yamllint disable-line rule:line-length
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8
+        with:
+          token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          commit-message: >-
+            chore(release): prepare v${{ steps.version.outputs.next_version }}
+          title: >-
+            chore(release): prepare v${{ steps.version.outputs.next_version }}
+          body: |
+            ## Release v${{ steps.version.outputs.next_version }}
+
+            Automated version bump from
+            `${{ steps.version.outputs.current_version }}`
+            to `${{ steps.version.outputs.next_version }}`.
+
+            ### Changes
+            - Updates `manifest.json` version and lastUpdated fields
+
+            ### What happens next
+            1. This PR will be reviewed and merged
+            2. A git tag `v${{ steps.version.outputs.next_version }}`
+               will be created automatically
+            3. A GitHub Release will be published with the
+               collections artifact
+
+            ---
+            *This PR was created automatically by the release workflow.*
+          branch: release/v${{ steps.version.outputs.next_version }}
+          base: main
+          labels: |
+            release-bump
