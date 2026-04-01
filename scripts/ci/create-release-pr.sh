@@ -37,33 +37,36 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Helper: write to GITHUB_OUTPUT if available, otherwise print to stdout
+output() { if [[ -n "${GITHUB_OUTPUT:-}" ]]; then echo "$1" >>"$GITHUB_OUTPUT"; else echo "output: $1"; fi; }
+
 # Skip if the last commit is already a release commit (prevents loop)
 LAST_COMMIT_MSG=$(git log -1 --format="%s")
 if [[ "$LAST_COMMIT_MSG" =~ ^chore\(release\): ]]; then
 	echo "Last commit is a release commit, skipping to prevent loop"
-	echo "bump_needed=false" >>"$GITHUB_OUTPUT"
+	output "bump_needed=false"
 	exit 0
 fi
 
 # Get current version
 CURRENT_VERSION=$(jq -r '.version' manifest.json)
 echo "Current version: $CURRENT_VERSION"
-echo "current_version=$CURRENT_VERSION" >>"$GITHUB_OUTPUT"
+output "current_version=$CURRENT_VERSION"
 
 # Compute next version
 NEXT_VERSION=$("$SCRIPT_DIR/version-bump.sh")
 echo "Next version: $NEXT_VERSION"
-echo "next_version=$NEXT_VERSION" >>"$GITHUB_OUTPUT"
+output "next_version=$NEXT_VERSION"
 
 # Check if version change needed
 if [[ "$CURRENT_VERSION" == "$NEXT_VERSION" ]]; then
 	echo "No version change needed"
-	echo "bump_needed=false" >>"$GITHUB_OUTPUT"
+	output "bump_needed=false"
 	exit 0
 fi
 
 echo "Version bump: $CURRENT_VERSION -> $NEXT_VERSION"
-echo "bump_needed=true" >>"$GITHUB_OUTPUT"
+output "bump_needed=true"
 
 # Update manifest version
 "$SCRIPT_DIR/update-manifest-version.sh" "$NEXT_VERSION"
@@ -73,4 +76,14 @@ LINTRO_IMAGE="ghcr.io/turbocoder13/py-lintro:latest"
 echo "Running lintro format to ensure code consistency..."
 if ! docker run --rm -v "$PWD:/code" -w /code "$LINTRO_IMAGE" lintro format .; then
 	echo "Warning: lintro format failed (exit code $?), continuing anyway"
+fi
+
+# GitHub Step Summary
+if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
+	{
+		echo "## Version Bump Computed"
+		echo ""
+		echo "- **Current:** \`$CURRENT_VERSION\`"
+		echo "- **Next:** \`$NEXT_VERSION\`"
+	} >>"$GITHUB_STEP_SUMMARY"
 fi
