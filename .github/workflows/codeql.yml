@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: MIT
+---
+name: CodeQL
+
+"on":
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  merge_group:
+    types: [checks_requested]
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: codeql-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+jobs:
+  codeql:
+    name: CodeQL
+    # Scan workflows and scripts/sync_omz.py; shell and JSON are not CodeQL languages.
+    # Interpreted sources require no build. Always report on PRs, including docs-only changes.
+    # yamllint disable-line rule:line-length
+    uses: lgtm-hq/lgtm-ci/.github/workflows/reusable-codeql.yml@2097a900753e3e5ad0e336483501b278e99855ae # v0.78.1
+    with:
+      languages: actions,python
+      build-mode: none
+      egress-policy: audit # TEMP: lgtm-hq/lgtm-ci#1207
+      egress-preset: github-tooling
+    permissions:
+      contents: read
+      security-events: write
